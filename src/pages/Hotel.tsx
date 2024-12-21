@@ -8,6 +8,8 @@ import Rooms from '@/components/hotel/Rooms'
 import Map from '@/components/hotel/Map'
 import RecommendHotels from '@/components/hotel/RecommandHotels'
 import ActionButtons from '@/components/hotel/ActionButtons'
+import Review from '@/components/hotel/Review'
+import SEO from '@/components/shared/SEO'
 
 function HotelPage() {
   const { id } = useParams() as { id: string }
@@ -22,6 +24,7 @@ function HotelPage() {
 
   return (
     <div>
+      <SEO title={name} description = {comment} image = {images[0]} />
       <Top title={name} subTitle={comment} />
       <Carousel images={images} />
       <ActionButtons hotel={data}/>
@@ -29,6 +32,7 @@ function HotelPage() {
       <Contents contents={contents} />
       <Map location={location}/>
       <RecommendHotels recommendHotels={recommendHotels}/>
+      <Review hotelId={id}/>
     </div>
   )
 }

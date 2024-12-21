@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import globalStyles from '@styles/globalStyles'
 import { Global } from '@emotion/react';
 import { RecoilRoot } from 'recoil';
+import { AlertContextProvider } from './contexts/AlertContext';
 
 const client = new QueryClient({
   defaultOptions : {
@@ -23,7 +24,9 @@ root.render(
     <Global styles = {globalStyles} />
     <RecoilRoot>
       <QueryClientProvider client={client}>
-        <App />
+        <AlertContextProvider>
+          <App />
+        </AlertContextProvider>
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>

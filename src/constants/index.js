@@ -2,5 +2,7 @@ export const COLLECTIONS = {
     HOTEL: 'HOTEL',
     ROOM: 'ROOM',
     USER: "USER",
-    LIKE: "LIKE"
+    LIKE: "LIKE",
+    REVIEW : "REVIEW",
+    RESERVATION : "RESERVATION"
   }

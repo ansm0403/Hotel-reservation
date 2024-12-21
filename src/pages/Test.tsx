@@ -1,3 +1,4 @@
+import HotelFormAddButton from '@/components/test/HotelFormAddButton'
 import HotelListAddButton from '@/components/test/HotelListAddButton'
 import RecommendHotelButton from '@/components/test/RecommandHotelButton'
 import React from 'react'
@@ -7,6 +8,7 @@ export default function TestPage() {
     <div>
         <HotelListAddButton />
         <RecommendHotelButton />
+        <HotelFormAddButton />
     </div>
   )
 }

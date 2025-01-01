@@ -40,8 +40,8 @@ function App() {
               <Route path="/settings/like" element = {<PrivateRoute><LikePage/></PrivateRoute>} />
               <Route path="/schedule" element = {<PrivateRoute><SchedulePage/></PrivateRoute>} />
               <Route path="/reservation" element = {<PrivateRoute><ReservationPage/></PrivateRoute>} />
-              <Route path="/reservation/done" element = {<PrivateRoute><ReservationListPage/></PrivateRoute>} />
-              <Route path="/reservation/list" element = {<PrivateRoute><ReservationDonePage/></PrivateRoute>} />
+              <Route path="/reservation/list" element = {<PrivateRoute><ReservationListPage/></PrivateRoute>} />
+              <Route path="/reservation/done" element = {<PrivateRoute><ReservationDonePage/></PrivateRoute>} />
               <Route path="/test" element={<TestPage />} />
             </Routes>
           </AuthGuard>

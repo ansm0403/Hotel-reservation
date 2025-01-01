@@ -12,6 +12,8 @@ function useReservation({
   hotelId: string
   roomId: string
 }) {
+
+
   const { open } = useAlertContext()
   const { data, isLoading } = useQuery(
     ['hotelWithRoom', hotelId, roomId],
@@ -20,13 +22,14 @@ function useReservation({
       onSuccess: ({ room }) => {
         if (room.avaliableCount === 0) {
           open({
-            title: '객신이 매진되었습니다.',
+            title: '객실이 매진되었습니다.',
             onButtonClick: () => {
               window.history.back()
             },
           })
         }
       },
+      refetchOnWindowFocus : false
     },
   )
 

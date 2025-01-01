@@ -24,7 +24,7 @@ function RangePicker({ startDate, endDate, onChange }: RangePickerProps) {
       if (dateRange == null) {
         return
       }
-      console.log(dateRange);
+
 
       const { from, to } = dateRange
   

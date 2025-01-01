@@ -21,8 +21,6 @@ function Rooms({ hotelId }: { hotelId: string }) {
   const { open } = useAlertContext();
   const navigate = useNavigate();
 
-  console.log('data', data)
-
   return (
     <Container>
       <Header justify="space-between" align="center">
@@ -49,6 +47,7 @@ function Rooms({ hotelId }: { hotelId: string }) {
 
           return (
             <ListRow
+              key={room.id}
               left={
                 <img
                   src={room.imageUrl}

@@ -1,18 +1,24 @@
 
 import styled from '@emotion/styled'
-
 import { typographyMap } from '@styles/typography'
+import { content } from '@/mock/data';
 import ReactMarkdown from 'react-markdown'
 
 function Contents({ contents }: { contents: string }) {
+
   return (
     <Container>
-      <ReactMarkdown>{contents}</ReactMarkdown>
+      <ReactMarkdown children={content} />
     </Container>
   )
 }
 
 const Container = styled.div`
+
+  .markdown > * {
+    all: revert;
+  }
+
   padding: 24px;
   ${typographyMap.t6};
 

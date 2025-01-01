@@ -1,10 +1,17 @@
 import useReservations from '@/components/reservation-list/hooks/useReservations'
+import FixedBottomButton from '@/components/shared/FixedBottomButton'
 import ListRow from '@shared/ListRow'
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ReservationListPage() {
   const { data, isLoading } = useReservations()
+  const navigate = useNavigate();
 
-  console.log('data', data)
+  const handleBackHome = useCallback(() => {
+    navigate('/');
+  },[navigate])
+
 
   if (data == null || isLoading === true) {
     return null
@@ -31,6 +38,10 @@ function ReservationListPage() {
           }
         />
       ))}
+      <FixedBottomButton 
+        label='홈으로 이동하기'
+        onClick = {handleBackHome}
+      />
     </div>
   )
 }

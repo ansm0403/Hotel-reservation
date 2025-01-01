@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@babel/preset-react", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.25.9"],\
+          ["@babel/runtime", "npm:7.26.0"],\
           ["@craco/craco", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.1.0"],\
           ["@emotion/babel-plugin", "npm:11.13.5"],\
           ["@emotion/core", "npm:11.0.0"],\
@@ -12239,6 +12240,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["hotels-app", "workspace:."],\
           ["@babel/preset-react", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.25.9"],\
+          ["@babel/runtime", "npm:7.26.0"],\
           ["@craco/craco", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.1.0"],\
           ["@emotion/babel-plugin", "npm:11.13.5"],\
           ["@emotion/core", "npm:11.0.0"],\

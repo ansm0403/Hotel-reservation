@@ -9,7 +9,7 @@ import { ko } from 'date-fns/locale'
 import { DayPicker, DateRange } from 'react-day-picker'
 import { colors } from '@styles/colorPalette'
 import styled from '@emotion/styled'
-import "react-day-picker/style.css"
+// import "react-day-picker/style.css"
   
 interface RangePickerProps {
     startDate?: string
@@ -118,12 +118,18 @@ const Container = styled.div`
       color: ${colors.gray200};
     }
   
+
     .rdp-focused {
-      background-color: ${colors.blue100};
+      background-color: ${colors.blue500};
     }
-  
-    .rdp-day .rdp-day_range_start,
-    .rdp-day .rdp-day_range_end {
+
+    .rdp-range_middle{
+      background-color : ${colors.gray100};
+    }
+
+    .rdp-range_start,
+    .rdp-range_end {
+      background-color: ${colors.blue500};
       color: ${colors.white};
     }
   
@@ -141,6 +147,11 @@ const Container = styled.div`
       background-color: ${colors.blue};
       content: '';
   }
+
+  .rdp-outside {
+      background-color : transparent;
+  }
+
 `
   
 export default RangePicker

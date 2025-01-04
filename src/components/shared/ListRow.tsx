@@ -34,7 +34,7 @@ function ListRow({
       <Flex css={listRowContentsStyles}>{contents}</Flex>
       {right && <Flex>{right}</Flex>}
       {withArrow ? <IconArrowRight /> : null}
-    </Flex>
+    </Flex>        
   )
 }
 
@@ -55,7 +55,7 @@ function ListRowTexts({
   subTitle,
 }: {
   title: React.ReactNode
-  subTitle: React.ReactNode
+  subTitle?: React.ReactNode
 }) {
   return (
     <Flex direction="column">

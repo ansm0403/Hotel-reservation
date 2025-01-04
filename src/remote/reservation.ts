@@ -7,15 +7,16 @@ import {
     query,
     where,
     getDocs,
+    deleteDoc,
   } from 'firebase/firestore'
-  import { COLLECTIONS } from '@/constants'
-  import { store } from './firebase'
-  import { getHotel } from './hotel'
+import { COLLECTIONS } from '@/constants'
+import { store } from './firebase'
+import { getHotel } from './hotel'
   
-  import { Reservation } from '@models/reservation'
-  import { Room } from '@models/room'
+import { Reservation } from '@models/reservation'
+import { Room } from '@models/room'
   
-  export async function makeReservation(newReservation: Reservation) {
+export async function makeReservation(newReservation: Reservation) {
     const hotelSnapshot = doc(store, COLLECTIONS.HOTEL, newReservation.hotelId)
     const roomSnapshot = await getDoc(
       doc(hotelSnapshot, COLLECTIONS.ROOM, newReservation.roomId),
@@ -34,9 +35,9 @@ import {
       }),
       setDoc(doc(collection(store, COLLECTIONS.RESERVATION)), newReservation),
     ])
-  }
+}
   
-  export async function getReservations({ userId }: { userId: string }) {
+export async function getReservations({ userId }: { userId: string }) {
     const reservationQuery = query(
       collection(store, COLLECTIONS.RESERVATION),
       where('userId', '==', userId),
@@ -52,7 +53,7 @@ import {
         ...(reservationDoc.data() as Reservation),
       }
   
-      const hotel = await getHotel(reservation.hotelId)
+      const hotel  = await getHotel(reservation.hotelId)
   
       result.push({
         reservation,
@@ -60,5 +61,28 @@ import {
       })
     }
   
-    return result
-  }
+  return result
+}
+
+export async function removeReservation({ 
+  hotelId, reservId, roomId
+} : { 
+  hotelId : string
+  reservId : string
+  roomId : string
+}){
+  const hotelSnapshot = doc(store, COLLECTIONS.HOTEL, hotelId);
+  const roomSnapshot = await getDoc(doc(hotelSnapshot, COLLECTIONS.ROOM, roomId))
+
+  const room = roomSnapshot.data() as Room
+  
+  const restRoom = room.avaliableCount;
+
+  return Promise.all([
+    deleteDoc(doc(store, COLLECTIONS.RESERVATION, reservId)),
+    updateDoc(roomSnapshot.ref, {
+      avaliableCount: restRoom + 1,
+    })
+  ]);
+  
+}

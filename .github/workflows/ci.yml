@@ -1,6 +1,6 @@
 name: hotels-CI  # workflow 이름름
 
-on: [push, pull_request]  # workflow 를 실행시킬 이벤트 정의
+on: [pull_request]  # workflow 를 실행시킬 이벤트 정의
                     # 여기서는 push, pull_request 시 workflow 실행
 
 jobs:

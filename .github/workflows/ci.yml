@@ -1,28 +1,21 @@
-name: CI
+name: hotels-CI  # workflow 이름름
 
-on: [pull_request]
+on: [pull_request]  # workflow 를 실행시킬 이벤트 정의
+                    # 여기서는 push, pull_request 시 workflow 실행
 
 jobs:
-  lint:
+  build:                    # job의 이름 
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 어떤 호스트에서 실행될지? 우분투 가상머신신에서 실행
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3  # 해당 리포지토리를 pull 받고 리포지토리를 다운 받은 폴더로 이동하는 action, 대부분의 workflow 에서 사용.
+      
+      - name : Set up node 18       # 아래 job의 이름
+        uses: actions/setup-node@v2 # 노드를 설치하는 action
+                                    # 대부분의 프로그래밍 언어가 가상머신 안에는 없기에 실행에 필요한 언어를 action으로 다운.
         with:
-          node-version: '18'
-      - run: yarn install
-      - run: yarn lint
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - run: yarn install
-      - run: CI='false' yarn build
+          node-version: '18' # 위의 uses와 연결 node 18 버전으로 설치치
+      - run: yarn install  # run 명령어로 우분투에서 실행할 명령들
+      - run: CI='false' yarn build # CI=true 라면 bulid 중에 발생하는 경고를 오류로 취급해서 가끔 실패
    

@@ -1,25 +1,17 @@
 
-# instagram
+# JAPAN HOTEL RESERVATION
 <br>
-
-next.js 를 이용한 인스타그램 클론코딩입니다.
-
-
----
-
-
 
 ## 프로젝트 소개
 
-Next.js 의 숙련도를 올리고 지난 프로젝트때 완성하지 못한 검색기능을 완성하며 직접 서버를 구현하여 풀스택 프레임워크의 유용함을 직접 느끼기 위하여 시작한 프로젝트
+일본 주요 지역 호텔의 정보들과 예약이 가능한 어플리케이션입니다
 
 ---
 ## 개발자 소개
 
 <br>
 
-* 안상문 : 프론트엔드 및 Sanity, Next Auth를 이용한 서버 개발
-
+* 안상문 : 프론트엔드, 백엔드
   
 <br>
 
@@ -33,16 +25,18 @@ Next.js 의 숙련도를 올리고 지난 프로젝트때 완성하지 못한 �
 
 ### Development
 
-![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
 ![Context-API](https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react)
 
 
 ### Config
 
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-
+  ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
+  
 <br>
 
 ## 주요 기능

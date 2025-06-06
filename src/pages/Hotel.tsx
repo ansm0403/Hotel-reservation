@@ -20,6 +20,8 @@ function HotelPage() {
     return <div>Loading...</div>
   }
 
+  console.log("데이터 : ", data);
+
   const { name, comment, images, contents, location, recommendHotels } = data
 
   return (

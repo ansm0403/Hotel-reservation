@@ -20,7 +20,7 @@ function ReservationDonePage() {
       <Spacing size={80} />
       <Flex direction="column" align="center">
         <img
-          src="https://cdn1.iconfinder.com/data/icons/travel-line-good-life/512/plane-64.png"
+          src="https://cdn1.iconfinder.com/data/icons/building-vol-3-3/512/2-512.png"
           alt=""
           width={120}
           height={120}

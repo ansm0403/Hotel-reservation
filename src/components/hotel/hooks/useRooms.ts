@@ -24,7 +24,7 @@ export default function useRooms({hotelId} : {hotelId : string}){
         return () => {
             unsubscribe()
         }
-    },[hotelId, client])
+    },[])
     
     return useQuery(['rooms', hotelId], ()=>getRooms(hotelId));
 }

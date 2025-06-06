@@ -5,6 +5,7 @@ import { Fragment } from 'react'
 import Spacing from '@shared/Spacing'
 import useLike from '@/hook/like/useLike'
 import useHotels from '@/components/hotelList/hook/useHotels'
+import Carousel from '@/components/home/Carousel'
 
 function HotelList() {
   const { data: hotels, hasNextPage, loadMore } = useHotels()
@@ -12,6 +13,7 @@ function HotelList() {
 
   return (
     <div>
+      <Carousel />
       <Top title="인기 호텔" subTitle="호텔부터 펜션까지 최저가" />
 
       <InfiniteScroll

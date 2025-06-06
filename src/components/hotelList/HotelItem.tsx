@@ -52,7 +52,7 @@ function HotelItem({
     return () => {
       clearInterval(timer)
     }
-  }, [hotel.events])
+  }, [])
 
   const tagComponent = () => {
     if (hotel.events == null) {

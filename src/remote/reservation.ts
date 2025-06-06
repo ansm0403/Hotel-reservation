@@ -37,7 +37,7 @@ export async function makeReservation(newReservation: Reservation) {
     ])
 }
   
-export async function getReservations({ userId }: { userId: string }) {
+export async function  getReservations({ userId }: { userId: string }) {
     const reservationQuery = query(
       collection(store, COLLECTIONS.RESERVATION),
       where('userId', '==', userId),

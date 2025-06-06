@@ -8,7 +8,7 @@ import { FORMS } from '@/mock/data'
 function HotelFormAddButton() {
   const handleButtonClick = async () => {
     const batch = writeBatch(store)
-    const snapshots = await getDocs(collection(store, COLLECTIONS.HOTEL))
+    const snapshots = await getDocs(collection(store, COLLECTIONS.HOTELS))
 
     snapshots.docs.forEach((hotel) => {
       batch.update(hotel.ref, {

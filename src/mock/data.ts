@@ -121,7 +121,7 @@ export const HOTEL_NAMES = [
   export const ROOMS = [
     {
       price: 130000,
-      roomName: 'Single room',
+      roomName: '싱글 룸',
       avaliableCount: 2,
       basicInfo: {
         squareMeters: '16m²',
@@ -134,7 +134,7 @@ export const HOTEL_NAMES = [
     },
     {
       price: 150000,
-      roomName: 'Double room',
+      roomName: '더블 룸',
       avaliableCount: 2,
       basicInfo: {
         squareMeters: '16m²',
@@ -146,7 +146,7 @@ export const HOTEL_NAMES = [
     },
     {
       price: 200000,
-      roomName: '트윈룸, 여성 전용, 금연',
+      roomName: '트윈 룸, 여성 전용, 금연',
       avaliableCount: 0,
       basicInfo: {
         squareMeters: '16m²',

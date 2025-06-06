@@ -1,6 +1,6 @@
 import { parse } from 'qs'
 import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 import Summary from '@components/reservation/Summary'
 import Spacing from '@shared/Spacing'
@@ -9,9 +9,12 @@ import addDelimiter from '@utils/addDelimiter'
 import useUser from '@/hook/auth/useUser'
 import useReservation from '@/components/reservation/hooks/useReservation'
 
-export default function ReservationPage() {
+
+export default function Reservation() {
   const user = useUser()
   const [goDonePage, setGoDonePage] = useState(false);
+
+  const navigate = useNavigate();
 
   const { startDate, endDate, nights, roomId, hotelId } = parse(
     window.location.search,
@@ -32,8 +35,7 @@ export default function ReservationPage() {
     ) {
       window.history.back()
     }
-  }, [user, startDate, endDate, nights, roomId, hotelId])
-
+  }, [])
 
   const { data, isLoading, makeReservation } = useReservation({
     hotelId,
@@ -46,7 +48,7 @@ export default function ReservationPage() {
 
   const { hotel, room } = data
 
-  if(goDonePage) return <Navigate to = {`/reservation/done?hotelName=${hotel.name}`} />
+  // if(goDonePage) return <Navigate to = {`/reservation/done?hotelName=${hotel.name}`} />
 
   const handleSubmit = async (formValues: { [key: string]: string }) => {
 
@@ -62,7 +64,8 @@ export default function ReservationPage() {
 
     await makeReservation(newReservation)
 
-    setGoDonePage(true);
+    navigate(`/reservation/done?hotelName=${hotel.name}`)
+    // setGoDonePage(true);
   }
 
   const buttonLabel = `${nights}박 ${addDelimiter(

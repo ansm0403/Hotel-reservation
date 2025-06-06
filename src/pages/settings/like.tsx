@@ -50,6 +50,11 @@ import { Virtuoso } from 'react-virtuoso'
                         >
                           <ListRow
                             as="div"
+                            right = {
+                              <div>
+                                <img src = {like.hotelMainImageUrl} width = {100}/>
+                              </div>
+                            }
                             contents={
                               <ListRow.Texts
                                 title={like.order}

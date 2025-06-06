@@ -26,7 +26,8 @@ export default function useReservations() {
     }) => removeReservation({hotelId, roomId, reservId}),
     {
       onSuccess : () => {
-        client.invalidateQueries(['reservations', user?.uid]);
+        // client.invalidateQueries(['reservations', user?.uid]);
+        client.removeQueries(['reservations', user?.uid]);
         open({
           title : "예약 취소가 완료되었습니다.",
           onButtonClick : () => {

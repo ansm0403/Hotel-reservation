@@ -1,21 +1,18 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import ListRow from '@shared/ListRow'
 import Tag from '@shared/Tag'
 import Spacing from '@shared/Spacing'
-import Button from '@shared/Button'
 import addDelimiter from '@utils/addDelimiter'
-
 import useRooms from './hooks/useRooms'
 import qs from 'qs'
 import useUser from '@/hook/auth/useUser'
 import { useAlertContext } from '@/contexts/AlertContext'
 import { useNavigate } from 'react-router-dom'
 
-function Rooms({ hotelId }: { hotelId: string }) {
+function Rooms({ hotelId, images }: { hotelId: string, images : string[] }) {
   const { data } = useRooms({ hotelId })
   const user = useUser();
   const { open } = useAlertContext();
@@ -32,7 +29,7 @@ function Rooms({ hotelId }: { hotelId: string }) {
         </Text>
       </Header>
       <ul>
-        {data?.map((room) => {
+        {data?.map((room, index) => {
           const 마감임박인가 = room.avaliableCount === 1
           const 매진인가 = room.avaliableCount === 0
 
@@ -44,13 +41,12 @@ function Rooms({ hotelId }: { hotelId: string }) {
             addQueryPrefix : true
           }
         )
-
           return (
             <ListRow
               key={room.id}
               left={
                 <img
-                  src={room.imageUrl}
+                  src={images[index]}
                   alt={`${room.roomName} 의 객실 이미지`}
                   css={imageStyles}
                 />
@@ -74,7 +70,7 @@ function Rooms({ hotelId }: { hotelId: string }) {
                 />
               }
               right={
-                <Button size="medium" disabled={매진인가} onClick = {()=>{
+                <Button disabled={매진인가} onClick = {()=>{
                   if(user == null){
                     open({
                       title : "로그인이 필요한 기능입니다.",
@@ -97,6 +93,13 @@ function Rooms({ hotelId }: { hotelId: string }) {
   )
 }
 
+const Button = styled.button`
+  background : linear-gradient(to right,rgb(196,173,141) 0%,rgb(179,157,128) 34.48%, rgb(153,133,108) 100%);
+  color : white;
+  border-radius : 5px;
+  padding : 10px 15px;
+`
+
 const Container = styled.div`
   margin: 40px 0;
 `
@@ -114,3 +117,6 @@ const imageStyles = css`
 `
 
 export default Rooms
+
+
+// 

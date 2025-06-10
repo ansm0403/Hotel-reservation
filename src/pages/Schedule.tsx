@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import FixedBottomButton from '@shared/FixedBottomButton'
-
 import RangePicker from '@shared/RangePicker'
+import { useSetRecoilState } from 'recoil'
+import { navbarAtom } from '@/store/atom/navbar'
+import { css } from '@emotion/react'
+import GoBackIcon from '@/components/icons/GoBackIcon'
 
 function SchedulePage() {
   const navigate = useNavigate()
+  const setNavbarState = useSetRecoilState(navbarAtom);
 
   const { roomId = '', hotelId = '' } = qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
@@ -25,6 +29,12 @@ function SchedulePage() {
     endDate: undefined,
     nights: 0,
   })
+
+  useEffect(()=>{
+    setNavbarState(false);
+
+    return () => setNavbarState(true)
+  }, [])
 
   useEffect(() => {
     if (roomId === '' || hotelId === '') {
@@ -51,9 +61,14 @@ function SchedulePage() {
   const buttonLabel = 제출가능한가
     ? `${selectedDate.startDate} - ${selectedDate.endDate} (${selectedDate.nights}박)`
     : '예약 날짜를 선택해주세요'
+  
+  const handleBack = () => {
+    window.history.back();
+  }
 
   return (
-    <div>
+    <div css = {containerStyles} onClick = {handleBack}>
+      <GoBackIcon size='30px' />
       <RangePicker
         startDate={selectedDate.startDate}
         endDate={selectedDate.endDate}
@@ -73,6 +88,10 @@ function SchedulePage() {
     </div>
   )
 }
+
+const containerStyles = css`
+  position : relative;
+`
 
 export default SchedulePage
 

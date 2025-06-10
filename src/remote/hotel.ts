@@ -54,7 +54,7 @@ export async function getHotel(id: string) {
   return {
     id,
     ...snapshot.data(),
-  } as Hotel
+  } as HOTEL_2
 }
 
 export async function getRecommendHotels(hotelIds: string[]) {
@@ -67,7 +67,7 @@ export async function getRecommendHotels(hotelIds: string[]) {
 
   return snapshot.docs.map(
     (doc) =>
-      ({ id: doc.id, ...doc.data() }) as Hotel,
+      ({ id: doc.id, ...doc.data() }) as HOTEL_2,
   )
 }
 
@@ -129,7 +129,13 @@ export async function getSearchHotels({
 
   if(keyword?.length !== 0 && city?.length !== 0) {
     searchQuery = pageParam == null 
-    ? query(collection(store, COLLECTIONS.HOTELS), limit(10))
+    ? query(
+        collection(store, COLLECTIONS.HOTELS),
+        where("name", ">=", keyword),
+        where("name", "<=", keyword + '\uf8ff'),
+        where("city", "==", city),
+        limit(10)
+    )
     : query(
         collection(store, COLLECTIONS.HOTELS),
         startAfter(pageParam),
@@ -140,7 +146,12 @@ export async function getSearchHotels({
     )
   } else if(keyword?.length !== 0){
     searchQuery = pageParam == null 
-    ? query(collection(store, COLLECTIONS.HOTELS), limit(10))
+    ? query(
+        collection(store, COLLECTIONS.HOTELS),
+        where("name", ">=", keyword),
+        where("name", "<=", keyword + '\uf8ff'),
+        limit(10)
+     )
     : query(
         collection(store, COLLECTIONS.HOTELS),
         startAfter(pageParam),
@@ -150,13 +161,17 @@ export async function getSearchHotels({
     );
   } else if ( city?.length !== 0 ) {
     searchQuery = pageParam == null 
-    ? query(collection(store, COLLECTIONS.HOTELS), limit(10))
+    ? query(
+        collection(store, COLLECTIONS.HOTELS), 
+        where("city", "==", city),
+        limit(10)
+    )
     : query(
         collection(store, COLLECTIONS.HOTELS),
         startAfter(pageParam),
         where("city", "==", city),
         limit(10)
-    );
+    )
   }
 
   const snapshot = await getDocs(searchQuery as Query<DocumentData, DocumentData>);

@@ -3,8 +3,16 @@ import { CgProfile } from "react-icons/cg";
 import { IoHomeOutline } from "react-icons/io5";
 import { css } from '@emotion/react';
 import { Link } from "react-router-dom";
+import { navbarAtom } from "@/store/atom/navbar";
+import { useRecoilValue } from "recoil";
 
 export default function Navbar() {
+
+  const navbarState = useRecoilValue(navbarAtom);
+
+  if(!navbarState) return <></>;
+  console.log("네브 : ", navbarState);
+
   return (
     <div 
       css = {containerStyles}

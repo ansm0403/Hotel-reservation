@@ -114,7 +114,6 @@ function LikeContents({
               src = {like.hotelMainImageUrl}
               alt = "myPage-like"
               css = {contentsImageStyle}
-              width = {400}
             />
             <h5 style = {{fontWeight : "bold", textAlign : "center"}}>{like.hotelName}</h5>
           </Flex>
@@ -127,7 +126,6 @@ function LikeContents({
 
 
 const Container = styled.div`
-  background-color : ${colors.gray200};
   display : flex;
   flex-direction : column;
   justify-content : center;
@@ -137,5 +135,8 @@ const Container = styled.div`
 
 const contentsImageStyle = css`
   object-fit : cover;
-  min-width : 300px;
+  width : 300px;
+  @media (mix-width : 500px){
+    width : 400px;
+  }
 `

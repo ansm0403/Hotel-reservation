@@ -1,7 +1,8 @@
 import useDebounce from '@/hook/useDebounce';
-import useSearchHotels from '@/hook/useSearchResult';
+import { searchAtom } from '@/store/atom/search';
 import { css } from '@emotion/react'
-import { ChangeEvent, lazy, useState } from 'react'
+import { ChangeEvent, lazy, useEffect, useState } from 'react'
+import { useSetRecoilState } from 'recoil';
 
 const SearchIcons = lazy(()=>import("../icons/SearchIcons"));
 
@@ -9,15 +10,22 @@ export default function SearchBar({ onClick } : { onClick? : () => void}) {
 
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [city, setCity] = useState<string>("");
-  const debouncedQuery = useDebounce(searchQuery || "", 1000);
+  const debouncedQuery = useDebounce(searchQuery || "", 500);
+  const setSearch = useSetRecoilState(searchAtom);
 
-  const { data : hotels, hasNextPage, loadMore} = useSearchHotels({ 
-    keyword : debouncedQuery,
-    city
-  })
+  useEffect(()=>{
+    if(debouncedQuery == null || city == null){
+      return;
+    }
+    setSearch({
+      keyword : debouncedQuery,
+      city
+    })
+  }, [debouncedQuery, city])
 
   const handleSelect = (e : ChangeEvent<HTMLSelectElement>) => {
     console.log("선택 : ", e.target.value);
+    setCity(e.target.value);
   }
 
   const handleInput = (e : ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +70,7 @@ const containerStyles = css`
     }
 `
 const searchContainerStyles = css`
-    width : 70%;
+    width : 62%;
     padding : 3px;
     display : flex;
     flex-direction : column;
@@ -83,7 +91,6 @@ const selectStyles = css`
   height : 36px;
   border-radius : 20px;
   padding : 3px;
-  margin-right : 1rem;
   &:focus : red;
   cursor : pointer;
   color : gray;

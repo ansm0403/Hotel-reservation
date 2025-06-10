@@ -65,13 +65,14 @@ const RAW_RUNTIME_STATE =
           ["react-infinite-scroll-component", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:6.1.0"],\
           ["react-intersection-observer", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.16.0"],\
           ["react-lazy-load-image-component", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:1.6.3"],\
-          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.0.1"],\
+          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:10.1.0"],\
           ["react-multi-carousel", "npm:2.8.6"],\
           ["react-query", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:3.39.3"],\
           ["react-router-dom", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.0.1"],\
           ["react-scripts", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:5.0.1"],\
           ["react-virtuoso", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:4.12.3"],\
           ["recoil", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:0.7.7"],\
+          ["remark-gfm", "npm:4.0.1"],\
           ["swiper", "npm:11.1.15"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
@@ -6733,7 +6734,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-debug-npm-4.1.12-82a3fc4905-10c0.zip/node_modules/@types/debug/",\
         "packageDependencies": [\
           ["@types/debug", "npm:4.1.12"],\
-          ["@types/ms", "npm:0.7.34"]\
+          ["@types/ms", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6781,6 +6782,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-estree-npm-1.0.6-b5e23f2ea2-10c0.zip/node_modules/@types/estree/",\
         "packageDependencies": [\
           ["@types/estree", "npm:1.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:1.0.8", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-estree-npm-1.0.8-2195bac6d6-10c0.zip/node_modules/@types/estree/",\
+        "packageDependencies": [\
+          ["@types/estree", "npm:1.0.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6998,10 +7006,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/ms", [\
-      ["npm:0.7.34", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-ms-npm-0.7.34-46f5141bfd-10c0.zip/node_modules/@types/ms/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-ms-npm-2.1.0-529ef799cc-10c0.zip/node_modules/@types/ms/",\
         "packageDependencies": [\
-          ["@types/ms", "npm:0.7.34"]\
+          ["@types/ms", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7542,6 +7550,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@ungap-structured-clone-npm-1.2.0-648f0b82e0-10c0.zip/node_modules/@ungap/structured-clone/",\
         "packageDependencies": [\
           ["@ungap/structured-clone", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:1.3.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@ungap-structured-clone-npm-1.3.0-aea1bdf957-10c0.zip/node_modules/@ungap/structured-clone/",\
+        "packageDependencies": [\
+          ["@ungap/structured-clone", "npm:1.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10344,10 +10359,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["decode-named-character-reference", [\
-      ["npm:1.0.2", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/decode-named-character-reference-npm-1.0.2-db17a755fd-10c0.zip/node_modules/decode-named-character-reference/",\
+      ["npm:1.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/decode-named-character-reference-npm-1.1.0-4d91467c71-10c0.zip/node_modules/decode-named-character-reference/",\
         "packageDependencies": [\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["character-entities", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
@@ -11132,6 +11147,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/escape-string-regexp-npm-4.0.0-4b531d8d59-10c0.zip/node_modules/escape-string-regexp/",\
         "packageDependencies": [\
           ["escape-string-regexp", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:5.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/escape-string-regexp-npm-5.0.0-a663e825ce-10c0.zip/node_modules/escape-string-regexp/",\
+        "packageDependencies": [\
+          ["escape-string-regexp", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12687,11 +12709,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["hast-util-to-jsx-runtime", [\
-      ["npm:2.3.2", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/hast-util-to-jsx-runtime-npm-2.3.2-caf0b36156-10c0.zip/node_modules/hast-util-to-jsx-runtime/",\
+      ["npm:2.3.6", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/hast-util-to-jsx-runtime-npm-2.3.6-66d3d660a9-10c0.zip/node_modules/hast-util-to-jsx-runtime/",\
         "packageDependencies": [\
-          ["hast-util-to-jsx-runtime", "npm:2.3.2"],\
-          ["@types/estree", "npm:1.0.6"],\
+          ["hast-util-to-jsx-runtime", "npm:2.3.6"],\
+          ["@types/estree", "npm:1.0.8"],\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/unist", "npm:3.0.3"],\
           ["comma-separated-tokens", "npm:2.0.3"],\
@@ -12699,11 +12721,11 @@ const RAW_RUNTIME_STATE =
           ["estree-util-is-identifier-name", "npm:3.0.0"],\
           ["hast-util-whitespace", "npm:3.0.0"],\
           ["mdast-util-mdx-expression", "npm:2.0.1"],\
-          ["mdast-util-mdx-jsx", "npm:3.1.3"],\
+          ["mdast-util-mdx-jsx", "npm:3.2.0"],\
           ["mdast-util-mdxjs-esm", "npm:2.0.1"],\
-          ["property-information", "npm:6.5.0"],\
+          ["property-information", "npm:7.1.0"],\
           ["space-separated-tokens", "npm:2.0.2"],\
-          ["style-to-object", "npm:1.0.8"],\
+          ["style-to-js", "npm:1.1.16"],\
           ["unist-util-position", "npm:5.0.0"],\
           ["vfile-message", "npm:4.0.2"]\
         ],\
@@ -12801,13 +12823,14 @@ const RAW_RUNTIME_STATE =
           ["react-infinite-scroll-component", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:6.1.0"],\
           ["react-intersection-observer", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.16.0"],\
           ["react-lazy-load-image-component", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:1.6.3"],\
-          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.0.1"],\
+          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:10.1.0"],\
           ["react-multi-carousel", "npm:2.8.6"],\
           ["react-query", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:3.39.3"],\
           ["react-router-dom", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:7.0.1"],\
           ["react-scripts", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:5.0.1"],\
           ["react-virtuoso", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:4.12.3"],\
           ["recoil", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:0.7.7"],\
+          ["remark-gfm", "npm:4.0.1"],\
           ["swiper", "npm:11.1.15"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
@@ -15457,6 +15480,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["markdown-table", [\
+      ["npm:3.0.4", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/markdown-table-npm-3.0.4-d4abf2a563-10c0.zip/node_modules/markdown-table/",\
+        "packageDependencies": [\
+          ["markdown-table", "npm:3.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["match-sorter", [\
       ["npm:6.3.4", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/match-sorter-npm-6.3.4-a2cec580f9-10c0.zip/node_modules/match-sorter/",\
@@ -15468,6 +15500,19 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["mdast-util-find-and-replace", [\
+      ["npm:3.0.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-find-and-replace-npm-3.0.2-700884f061-10c0.zip/node_modules/mdast-util-find-and-replace/",\
+        "packageDependencies": [\
+          ["mdast-util-find-and-replace", "npm:3.0.2"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["escape-string-regexp", "npm:5.0.0"],\
+          ["unist-util-is", "npm:6.0.0"],\
+          ["unist-util-visit-parents", "npm:6.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["mdast-util-from-markdown", [\
       ["npm:2.0.2", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-from-markdown-npm-2.0.2-b327f875e3-10c0.zip/node_modules/mdast-util-from-markdown/",\
@@ -15475,16 +15520,99 @@ const RAW_RUNTIME_STATE =
           ["mdast-util-from-markdown", "npm:2.0.2"],\
           ["@types/mdast", "npm:4.0.4"],\
           ["@types/unist", "npm:3.0.3"],\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["devlop", "npm:1.1.0"],\
           ["mdast-util-to-string", "npm:4.0.0"],\
-          ["micromark", "npm:4.0.1"],\
+          ["micromark", "npm:4.0.2"],\
           ["micromark-util-decode-numeric-character-reference", "npm:2.0.2"],\
           ["micromark-util-decode-string", "npm:2.0.1"],\
           ["micromark-util-normalize-identifier", "npm:2.0.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"],\
           ["unist-util-stringify-position", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm", [\
+      ["npm:3.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-npm-3.1.0-933de2cdb5-10c0.zip/node_modules/mdast-util-gfm/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm", "npm:3.1.0"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm-autolink-literal", "npm:2.0.1"],\
+          ["mdast-util-gfm-footnote", "npm:2.1.0"],\
+          ["mdast-util-gfm-strikethrough", "npm:2.0.0"],\
+          ["mdast-util-gfm-table", "npm:2.0.0"],\
+          ["mdast-util-gfm-task-list-item", "npm:2.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm-autolink-literal", [\
+      ["npm:2.0.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-autolink-literal-npm-2.0.1-dd870d9308-10c0.zip/node_modules/mdast-util-gfm-autolink-literal/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm-autolink-literal", "npm:2.0.1"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["ccount", "npm:2.0.1"],\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-find-and-replace", "npm:3.0.2"],\
+          ["micromark-util-character", "npm:2.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm-footnote", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-footnote-npm-2.1.0-d8da32ba7c-10c0.zip/node_modules/mdast-util-gfm-footnote/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm-footnote", "npm:2.1.0"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"],\
+          ["micromark-util-normalize-identifier", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm-strikethrough", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-strikethrough-npm-2.0.0-d16d95c318-10c0.zip/node_modules/mdast-util-gfm-strikethrough/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm-strikethrough", "npm:2.0.0"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm-table", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-table-npm-2.0.0-45a74f064b-10c0.zip/node_modules/mdast-util-gfm-table/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm-table", "npm:2.0.0"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
+          ["markdown-table", "npm:3.0.4"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["mdast-util-gfm-task-list-item", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-task-list-item-npm-2.0.0-cb1270a10f-10c0.zip/node_modules/mdast-util-gfm-task-list-item/",\
+        "packageDependencies": [\
+          ["mdast-util-gfm-task-list-item", "npm:2.0.0"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15505,10 +15633,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["mdast-util-mdx-jsx", [\
-      ["npm:3.1.3", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-mdx-jsx-npm-3.1.3-a0ff8c7770-10c0.zip/node_modules/mdast-util-mdx-jsx/",\
+      ["npm:3.2.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/mdast-util-mdx-jsx-npm-3.2.0-5ecac0b4b2-10c0.zip/node_modules/mdast-util-mdx-jsx/",\
         "packageDependencies": [\
-          ["mdast-util-mdx-jsx", "npm:3.1.3"],\
+          ["mdast-util-mdx-jsx", "npm:3.2.0"],\
           ["@types/estree-jsx", "npm:1.0.5"],\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/mdast", "npm:4.0.4"],\
@@ -15517,7 +15645,7 @@ const RAW_RUNTIME_STATE =
           ["devlop", "npm:1.1.0"],\
           ["mdast-util-from-markdown", "npm:2.0.2"],\
           ["mdast-util-to-markdown", "npm:2.1.2"],\
-          ["parse-entities", "npm:4.0.1"],\
+          ["parse-entities", "npm:4.0.2"],\
           ["stringify-entities", "npm:4.0.4"],\
           ["unist-util-stringify-position", "npm:4.0.0"],\
           ["vfile-message", "npm:4.0.2"]\
@@ -15558,7 +15686,7 @@ const RAW_RUNTIME_STATE =
           ["mdast-util-to-hast", "npm:13.2.0"],\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/mdast", "npm:4.0.4"],\
-          ["@ungap/structured-clone", "npm:1.2.0"],\
+          ["@ungap/structured-clone", "npm:1.3.0"],\
           ["devlop", "npm:1.1.0"],\
           ["micromark-util-sanitize-uri", "npm:2.0.1"],\
           ["trim-lines", "npm:3.0.1"],\
@@ -15678,15 +15806,15 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["micromark", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-npm-4.0.1-20e5dbdb6e-10c0.zip/node_modules/micromark/",\
+      ["npm:4.0.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-npm-4.0.2-99b2e4c11c-10c0.zip/node_modules/micromark/",\
         "packageDependencies": [\
-          ["micromark", "npm:4.0.1"],\
+          ["micromark", "npm:4.0.2"],\
           ["@types/debug", "npm:4.1.12"],\
-          ["debug", "virtual:6230e12b1d7dee1735a865cef131ea49c043e7f202fd08b14ceb90686e406b76a07840fc9510f1069465ad9695242b42830fc7fea7b01648a261463b7848122f#npm:4.3.7"],\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["debug", "virtual:9135d15fbd4ca78a6cf4f7e7b213502a98134622605a53a87a8eb844cf2ad82c41aa23512b1e1489a0a0cf41f91202924d435e0f0dacd520a1b105611cc22a89#npm:4.4.1"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["devlop", "npm:1.1.0"],\
-          ["micromark-core-commonmark", "npm:2.0.2"],\
+          ["micromark-core-commonmark", "npm:2.0.3"],\
           ["micromark-factory-space", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-chunked", "npm:2.0.1"],\
@@ -15696,19 +15824,19 @@ const RAW_RUNTIME_STATE =
           ["micromark-util-normalize-identifier", "npm:2.0.1"],\
           ["micromark-util-resolve-all", "npm:2.0.1"],\
           ["micromark-util-sanitize-uri", "npm:2.0.1"],\
-          ["micromark-util-subtokenize", "npm:2.0.3"],\
+          ["micromark-util-subtokenize", "npm:2.1.0"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-core-commonmark", [\
-      ["npm:2.0.2", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-core-commonmark-npm-2.0.2-898c79aebc-10c0.zip/node_modules/micromark-core-commonmark/",\
+      ["npm:2.0.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-core-commonmark-npm-2.0.3-5e317c62b2-10c0.zip/node_modules/micromark-core-commonmark/",\
         "packageDependencies": [\
-          ["micromark-core-commonmark", "npm:2.0.2"],\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["micromark-core-commonmark", "npm:2.0.3"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["devlop", "npm:1.1.0"],\
           ["micromark-factory-destination", "npm:2.0.1"],\
           ["micromark-factory-label", "npm:2.0.1"],\
@@ -15721,9 +15849,109 @@ const RAW_RUNTIME_STATE =
           ["micromark-util-html-tag-name", "npm:2.0.1"],\
           ["micromark-util-normalize-identifier", "npm:2.0.1"],\
           ["micromark-util-resolve-all", "npm:2.0.1"],\
-          ["micromark-util-subtokenize", "npm:2.0.3"],\
+          ["micromark-util-subtokenize", "npm:2.1.0"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm", [\
+      ["npm:3.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-npm-3.0.0-d154ab531f-10c0.zip/node_modules/micromark-extension-gfm/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm", "npm:3.0.0"],\
+          ["micromark-extension-gfm-autolink-literal", "npm:2.1.0"],\
+          ["micromark-extension-gfm-footnote", "npm:2.1.0"],\
+          ["micromark-extension-gfm-strikethrough", "npm:2.1.0"],\
+          ["micromark-extension-gfm-table", "npm:2.1.1"],\
+          ["micromark-extension-gfm-tagfilter", "npm:2.0.0"],\
+          ["micromark-extension-gfm-task-list-item", "npm:2.1.0"],\
+          ["micromark-util-combine-extensions", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-autolink-literal", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-autolink-literal-npm-2.1.0-8fcb271412-10c0.zip/node_modules/micromark-extension-gfm-autolink-literal/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-autolink-literal", "npm:2.1.0"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-sanitize-uri", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-footnote", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-footnote-npm-2.1.0-1cf783dd36-10c0.zip/node_modules/micromark-extension-gfm-footnote/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-footnote", "npm:2.1.0"],\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-core-commonmark", "npm:2.0.3"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-normalize-identifier", "npm:2.0.1"],\
+          ["micromark-util-sanitize-uri", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-strikethrough", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-strikethrough-npm-2.1.0-b2aa188eba-10c0.zip/node_modules/micromark-extension-gfm-strikethrough/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-strikethrough", "npm:2.1.0"],\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-util-chunked", "npm:2.0.1"],\
+          ["micromark-util-classify-character", "npm:2.0.1"],\
+          ["micromark-util-resolve-all", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-table", [\
+      ["npm:2.1.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-table-npm-2.1.1-7b9f4422c9-10c0.zip/node_modules/micromark-extension-gfm-table/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-table", "npm:2.1.1"],\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-tagfilter", [\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-tagfilter-npm-2.0.0-c5ad486636-10c0.zip/node_modules/micromark-extension-gfm-tagfilter/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-tagfilter", "npm:2.0.0"],\
+          ["micromark-util-types", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["micromark-extension-gfm-task-list-item", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-task-list-item-npm-2.1.0-b717607894-10c0.zip/node_modules/micromark-extension-gfm-task-list-item/",\
+        "packageDependencies": [\
+          ["micromark-extension-gfm-task-list-item", "npm:2.1.0"],\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15735,7 +15963,7 @@ const RAW_RUNTIME_STATE =
           ["micromark-factory-destination", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15748,7 +15976,7 @@ const RAW_RUNTIME_STATE =
           ["devlop", "npm:1.1.0"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15759,7 +15987,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["micromark-factory-space", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15772,7 +16000,7 @@ const RAW_RUNTIME_STATE =
           ["micromark-factory-space", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15785,7 +16013,7 @@ const RAW_RUNTIME_STATE =
           ["micromark-factory-space", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15796,7 +16024,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15818,7 +16046,7 @@ const RAW_RUNTIME_STATE =
           ["micromark-util-classify-character", "npm:2.0.1"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15829,7 +16057,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["micromark-util-combine-extensions", "npm:2.0.1"],\
           ["micromark-util-chunked", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15849,7 +16077,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-decode-string-npm-2.0.1-72716f39ea-10c0.zip/node_modules/micromark-util-decode-string/",\
         "packageDependencies": [\
           ["micromark-util-decode-string", "npm:2.0.1"],\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["micromark-util-character", "npm:2.1.1"],\
           ["micromark-util-decode-numeric-character-reference", "npm:2.0.2"],\
           ["micromark-util-symbol", "npm:2.0.1"]\
@@ -15890,7 +16118,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-resolve-all-npm-2.0.1-50f997ec4c-10c0.zip/node_modules/micromark-util-resolve-all/",\
         "packageDependencies": [\
           ["micromark-util-resolve-all", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15908,14 +16136,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["micromark-util-subtokenize", [\
-      ["npm:2.0.3", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-subtokenize-npm-2.0.3-16b1b59651-10c0.zip/node_modules/micromark-util-subtokenize/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-subtokenize-npm-2.1.0-2452c9ae9b-10c0.zip/node_modules/micromark-util-subtokenize/",\
         "packageDependencies": [\
-          ["micromark-util-subtokenize", "npm:2.0.3"],\
+          ["micromark-util-subtokenize", "npm:2.1.0"],\
           ["devlop", "npm:1.1.0"],\
           ["micromark-util-chunked", "npm:2.0.1"],\
           ["micromark-util-symbol", "npm:2.0.1"],\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15930,10 +16158,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["micromark-util-types", [\
-      ["npm:2.0.1", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-types-npm-2.0.1-0be9efde39-10c0.zip/node_modules/micromark-util-types/",\
+      ["npm:2.0.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/micromark-util-types-npm-2.0.2-ea8a969707-10c0.zip/node_modules/micromark-util-types/",\
         "packageDependencies": [\
-          ["micromark-util-types", "npm:2.0.1"]\
+          ["micromark-util-types", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -17079,15 +17307,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["parse-entities", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/parse-entities-npm-4.0.1-2c4b4091f8-10c0.zip/node_modules/parse-entities/",\
+      ["npm:4.0.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/parse-entities-npm-4.0.2-e6f75f611a-10c0.zip/node_modules/parse-entities/",\
         "packageDependencies": [\
-          ["parse-entities", "npm:4.0.1"],\
+          ["parse-entities", "npm:4.0.2"],\
           ["@types/unist", "npm:2.0.11"],\
-          ["character-entities", "npm:2.0.2"],\
           ["character-entities-legacy", "npm:3.0.0"],\
           ["character-reference-invalid", "npm:2.0.1"],\
-          ["decode-named-character-reference", "npm:1.0.2"],\
+          ["decode-named-character-reference", "npm:1.1.0"],\
           ["is-alphanumerical", "npm:2.0.1"],\
           ["is-decimal", "npm:2.0.1"],\
           ["is-hexadecimal", "npm:2.0.1"]\
@@ -19165,10 +19392,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["property-information", [\
-      ["npm:6.5.0", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/property-information-npm-6.5.0-1c8c103bec-10c0.zip/node_modules/property-information/",\
+      ["npm:7.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/property-information-npm-7.1.0-72f32d46c5-10c0.zip/node_modules/property-information/",\
         "packageDependencies": [\
-          ["property-information", "npm:6.5.0"]\
+          ["property-information", "npm:7.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -19693,26 +19920,27 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["react-markdown", [\
-      ["npm:9.0.1", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/react-markdown-npm-9.0.1-02c77a4123-10c0.zip/node_modules/react-markdown/",\
+      ["npm:10.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/react-markdown-npm-10.1.0-6f8037a507-10c0.zip/node_modules/react-markdown/",\
         "packageDependencies": [\
-          ["react-markdown", "npm:9.0.1"]\
+          ["react-markdown", "npm:10.1.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-f94b78cc21/4/AppData/Local/Yarn/Berry/cache/react-markdown-npm-9.0.1-02c77a4123-10c0.zip/node_modules/react-markdown/",\
+      ["virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:10.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-85b0eef61c/4/AppData/Local/Yarn/Berry/cache/react-markdown-npm-10.1.0-6f8037a507-10c0.zip/node_modules/react-markdown/",\
         "packageDependencies": [\
-          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:9.0.1"],\
+          ["react-markdown", "virtual:ecea3050806d31ff5725e292d9017b3845da2c6f358db22b54ffff649ac0e1b00aebbcd59f9b8ce3c8d917a06fa9b2ff4cdc7b6b6e8734ff49d950a76ac02e59#npm:10.1.0"],\
           ["@types/hast", "npm:3.0.4"],\
+          ["@types/mdast", "npm:4.0.4"],\
           ["@types/react", "npm:18.3.12"],\
           ["devlop", "npm:1.1.0"],\
-          ["hast-util-to-jsx-runtime", "npm:2.3.2"],\
+          ["hast-util-to-jsx-runtime", "npm:2.3.6"],\
           ["html-url-attributes", "npm:3.0.1"],\
           ["mdast-util-to-hast", "npm:13.2.0"],\
           ["react", "npm:18.3.1"],\
           ["remark-parse", "npm:11.0.0"],\
-          ["remark-rehype", "npm:11.1.1"],\
+          ["remark-rehype", "npm:11.1.2"],\
           ["unified", "npm:11.0.5"],\
           ["unist-util-visit", "npm:5.0.0"],\
           ["vfile", "npm:6.0.3"]\
@@ -20240,6 +20468,21 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["remark-gfm", [\
+      ["npm:4.0.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/remark-gfm-npm-4.0.1-f55aaba8ef-10c0.zip/node_modules/remark-gfm/",\
+        "packageDependencies": [\
+          ["remark-gfm", "npm:4.0.1"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-gfm", "npm:3.1.0"],\
+          ["micromark-extension-gfm", "npm:3.0.0"],\
+          ["remark-parse", "npm:11.0.0"],\
+          ["remark-stringify", "npm:11.0.0"],\
+          ["unified", "npm:11.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["remark-parse", [\
       ["npm:11.0.0", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/remark-parse-npm-11.0.0-6484fba69e-10c0.zip/node_modules/remark-parse/",\
@@ -20247,22 +20490,34 @@ const RAW_RUNTIME_STATE =
           ["remark-parse", "npm:11.0.0"],\
           ["@types/mdast", "npm:4.0.4"],\
           ["mdast-util-from-markdown", "npm:2.0.2"],\
-          ["micromark-util-types", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.2"],\
           ["unified", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["remark-rehype", [\
-      ["npm:11.1.1", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/remark-rehype-npm-11.1.1-b682bb669b-10c0.zip/node_modules/remark-rehype/",\
+      ["npm:11.1.2", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/remark-rehype-npm-11.1.2-26f5ed7456-10c0.zip/node_modules/remark-rehype/",\
         "packageDependencies": [\
-          ["remark-rehype", "npm:11.1.1"],\
+          ["remark-rehype", "npm:11.1.2"],\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/mdast", "npm:4.0.4"],\
           ["mdast-util-to-hast", "npm:13.2.0"],\
           ["unified", "npm:11.0.5"],\
           ["vfile", "npm:6.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["remark-stringify", [\
+      ["npm:11.0.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/remark-stringify-npm-11.0.0-b41a557b8d-10c0.zip/node_modules/remark-stringify/",\
+        "packageDependencies": [\
+          ["remark-stringify", "npm:11.0.0"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"],\
+          ["unified", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21523,6 +21778,16 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/webpack",\
           "webpack"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["style-to-js", [\
+      ["npm:1.1.16", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/style-to-js-npm-1.1.16-e2afeff038-10c0.zip/node_modules/style-to-js/",\
+        "packageDependencies": [\
+          ["style-to-js", "npm:1.1.16"],\
+          ["style-to-object", "npm:1.0.8"]\
         ],\
         "linkType": "HARD"\
       }]\

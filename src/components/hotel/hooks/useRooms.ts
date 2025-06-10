@@ -11,7 +11,7 @@ export default function useRooms({hotelId} : {hotelId : string}){
     const client = useQueryClient();
     useEffect(()=>{
         const unsubscribe = onSnapshot(
-            collection(doc(store, COLLECTIONS.HOTEL, hotelId), COLLECTIONS.ROOM),
+            collection(doc(store, COLLECTIONS.HOTELS, hotelId), COLLECTIONS.ROOM),
             (snapshot)=>{
                 const newRooms = snapshot.docs.map((doc)=>({
                     id : doc.id,

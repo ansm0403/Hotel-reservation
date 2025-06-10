@@ -7,7 +7,7 @@ import { store } from './firebase'
 
 export async function getRooms(hotelId: string) {
   const snapshot = await getDocs(
-    collection(doc(store, COLLECTIONS.HOTEL, hotelId), COLLECTIONS.ROOM),
+    collection(doc(store, COLLECTIONS.HOTELS, hotelId), COLLECTIONS.ROOM),
   )
 
   return snapshot.docs.map((doc) => ({

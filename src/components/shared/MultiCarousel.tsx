@@ -17,12 +17,18 @@ const responsive = {
   }
 };
 
-export default function MultiCarousel({ children } : {children : React.ReactNode}) {
+export default function MultiCarousel({ 
+  isAuto = false,
+  children 
+} : {
+  isAuto? : boolean
+  children : React.ReactNode
+}) {
   return (
     <Carousel 
       removeArrowOnDeviceType = {["desktop", "tablet", "mobile"]}
       infinite 
-      autoPlay 
+      autoPlay = {isAuto}
       responsive={responsive} 
       itemClass="m-2"
     >

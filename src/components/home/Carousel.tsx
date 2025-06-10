@@ -1,6 +1,7 @@
 import { getRecommandHotels } from '@/remote/hotel'
 import { css } from '@emotion/react'
 import { useQuery } from 'react-query'
+import { Link } from 'react-router-dom'
 import HotelCard from '../hotel/HotelCard'
 import MultiCarousel from '../shared/MultiCarousel'
 
@@ -20,7 +21,9 @@ export default function CarouselHotels() {
         <MultiCarousel>
           {
             hotels?.map((hotel)=>(
-              <HotelCard hotel={hotel} />
+              <Link to = {`/hotel/${hotel.id}`}>
+                <HotelCard hotel={hotel} />
+              </Link>
             ))
           }
         </MultiCarousel>    

@@ -10,15 +10,15 @@ import { css } from '@emotion/react'
 import { lazy, useEffect } from 'react'
 // import Contents from '@/components/hotel/Contents'
 import RecommandCarousel from '@/components/hotel/RecommandCarousel'
-import InfoIcons from '@/components/hotel/InfoIcons'
 import GoBackIcon from '@/components/icons/GoBackIcon'
 import { useSetRecoilState } from 'recoil'
 import { navbarAtom } from '@/store/atom/navbar'
 
+const InfoIcons = lazy(()=>import('@/components/hotel/InfoIcons'))
 const Carousel = lazy(()=>import("@components/hotel/Carousel"))
 const Rooms = lazy(()=>import('@/components/hotel/Rooms'))
 const Map = lazy(()=>import('@/components/hotel/Map'))
-
+const ReservationButton = lazy(()=>import('@/components/hotel/ReservationButton'))
 
 function HotelPage() {
 
@@ -38,7 +38,7 @@ function HotelPage() {
     return <div>Loading...</div>
   }
 
-  const { name, comment, images, contents, location, recommendHotels, mainImageUrl, starRating, city } = data
+  const { name, comment, images, contents, location, recommendHotels, mainImageUrl, starRating, city, price } = data
 
   const handleBack = () => {
     window.history.back();
@@ -58,13 +58,14 @@ function HotelPage() {
       <div css = {contentsStyles}>
         <Top title={name} subTitle={comment} data = {data}/>
         <InfoIcons hotel = {data}/>
-        {/* <Rooms hotelId={id} images = {images} /> */}
+        <Rooms hotelId={id} images = {images} price = {price}/>
         <Map location={location}/>
         {/* <Contents contents={contents} images = {images} /> */}
         <RecommandCarousel recommandHotels={recommendHotels} />
         {/* <RecommendHotels recommendHotels={recommendHotels}/> */}
         <Review hotelId={id}/>
       </div>
+      <ReservationButton id = {id} price = {price}/>
     </div>
   )
 }

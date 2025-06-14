@@ -24,8 +24,6 @@ function RangePicker({ startDate, endDate, onChange }: RangePickerProps) {
       if (dateRange == null) {
         return
       }
-
-
       const { from, to } = dateRange
   
       // 1. 중복된 날짜

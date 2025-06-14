@@ -78,7 +78,7 @@ export async function getHotelWithRoom({
   hotelId: string
   roomId: string
 }) {
-  const hotelSanpshot = await getDoc(doc(store, COLLECTIONS.HOTEL, hotelId))
+  const hotelSanpshot = await getDoc(doc(store, COLLECTIONS.HOTELS, hotelId))
 
   const roomSanpshot = await getDoc(doc(hotelSanpshot.ref, COLLECTIONS.ROOM, roomId))
 

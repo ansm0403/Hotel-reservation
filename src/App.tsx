@@ -7,6 +7,8 @@ import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import Navbar2 from "./components/shared/Navbar2";
+import BookingPage from "./pages/BookingPage";
+import ReservationPage from "./pages/Reservation";
 
 const TestPage = lazy(() => import('@pages/Test'))
 const HotelListPage = lazy(() => import('@pages/HotelList'))
@@ -17,7 +19,6 @@ const SettingsPage = lazy(() => import('@pages/settings'))
 const LikePage = lazy(() => import('@pages/settings/like'))
 const LikeListPage = lazy(() => import('@pages/LikeList'))
 const SchedulePage = lazy(() => import('@pages/Schedule'))
-const ReservationPage = lazy(() => import('@pages/Reservation'))
 const ReservationDonePage = lazy(() => import('@pages/ReservationDone'))
 const ReservationListPage = lazy(() => import('@pages/ReservationList'))
 const SearchPage = lazy(() => import('@pages/Search'));
@@ -43,7 +44,8 @@ function App() {
               <Route path="/search" element = {<SearchPage></SearchPage>} />
               <Route path="/like/list" element = {<PrivateRoute><LikeListPage /></PrivateRoute>} />
               <Route path="/schedule" element = {<PrivateRoute><SchedulePage/></PrivateRoute>} />
-              <Route path="/reservation" element = {<PrivateRoute><ReservationPage/></PrivateRoute>} />
+              <Route path="/booking" element = {<PrivateRoute><BookingPage /></PrivateRoute>} />
+              <Route path="/reservation" element = {<PrivateRoute><ReservationPage /></PrivateRoute>} />
               <Route path="/reservation/list" element = {<PrivateRoute><ReservationListPage/></PrivateRoute>} />
               <Route path="/reservation/done" element = {<PrivateRoute><ReservationDonePage/></PrivateRoute>} />
               <Route path="/test" element={<TestPage />} />

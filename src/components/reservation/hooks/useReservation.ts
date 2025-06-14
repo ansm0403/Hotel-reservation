@@ -20,7 +20,6 @@ function useReservation({
     () => getHotelWithRoom({ hotelId, roomId }),
     {
       onSuccess: ({ room }) => {
-
         if (room.avaliableCount === 0) {
           open({
             title: '객실이 매진되었습니다.',

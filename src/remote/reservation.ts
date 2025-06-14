@@ -13,11 +13,11 @@ import { COLLECTIONS } from '@/constants'
 import { store } from './firebase'
 import { getHotel } from './hotel'
   
-import { Reservation } from '@models/reservation'
+import { Reservation, ReservationSnapshot } from '@models/reservation'
 import { Room } from '@models/room'
   
 export async function makeReservation(newReservation: Reservation) {
-    const hotelSnapshot = doc(store, COLLECTIONS.HOTEL, newReservation.hotelId)
+    const hotelSnapshot = doc(store, COLLECTIONS.HOTELS, newReservation.hotelId)
     const roomSnapshot = await getDoc(
       doc(hotelSnapshot, COLLECTIONS.ROOM, newReservation.roomId),
     )
@@ -50,7 +50,7 @@ export async function  getReservations({ userId }: { userId: string }) {
     for (const reservationDoc of reservationSnapshot.docs) {
       const reservation = {
         id: reservationDoc.id,
-        ...(reservationDoc.data() as Reservation),
+        ...(reservationDoc.data() as ReservationSnapshot),
       }
   
       const hotel  = await getHotel(reservation.hotelId)
@@ -71,7 +71,7 @@ export async function removeReservation({
   reservId : string
   roomId : string
 }){
-  const hotelSnapshot = doc(store, COLLECTIONS.HOTEL, hotelId);
+  const hotelSnapshot = doc(store, COLLECTIONS.HOTELS, hotelId);
   const roomSnapshot = await getDoc(doc(hotelSnapshot, COLLECTIONS.ROOM, roomId))
 
   const room = roomSnapshot.data() as Room

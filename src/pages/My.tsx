@@ -6,7 +6,7 @@ import { colors } from "@/styles/colorPalette";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import Spacing from "@/components/shared/Spacing";
-import { Reservation } from "@/models/reservation";
+import { Reservation, ReservationSnapshot } from "@/models/reservation";
 import { Hotel } from '@models/hotel'
 import { Like } from '@models/like'
 import Flex from "@/components/shared/Flex";
@@ -52,7 +52,7 @@ export default function MyPage() {
 }
 
 interface ReservContentsProps {
-  reservation : Reservation & { id : string }
+  reservation : ReservationSnapshot & { id : string }
   hotel : Hotel
 }
 

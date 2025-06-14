@@ -8,21 +8,40 @@ import Spacing from '@shared/Spacing'
 import addDelimiter from '@utils/addDelimiter'
 import useRooms from './hooks/useRooms'
 import qs from 'qs'
-import useUser from '@/hook/auth/useUser'
-import { useAlertContext } from '@/contexts/AlertContext'
-import { useNavigate } from 'react-router-dom'
+import { useSetRecoilState } from 'recoil'
+import { roomsAtom } from '@/store/atom/rooms'
+import { Room } from '@/models/room'
+import priceConvert from '@/utils/priceConvert'
+// import useUser from '@/hook/auth/useUser'
+// import { useAlertContext } from '@/contexts/AlertContext'
+// import { useNavigate } from 'react-router-dom'
 
-function Rooms({ hotelId, images }: { hotelId: string, images : string[] }) {
+function Rooms({ 
+  hotelId, 
+  images,
+  price 
+}: { 
+  hotelId: string, 
+  images : string[],
+  price : number
+}) {
   const { data } = useRooms({ hotelId })
-  const user = useUser();
-  const { open } = useAlertContext();
-  const navigate = useNavigate();
+
+  const setRoomsState = useSetRecoilState(roomsAtom);
+
+  if(data) {
+    setRoomsState(data);
+  }
+
+  // const user = useUser();
+  // const { open } = useAlertContext();
+  // const navigate = useNavigate();
 
   return (
     <Container>
       <Header justify="space-between" align="center">
         <Text bold={true} typography="t4">
-          객실정보
+          객실 정보
         </Text>
         <Text typography="t6" color="gray400">
           1박, 세금 포함
@@ -64,25 +83,28 @@ function Rooms({ hotelId, images }: { hotelId: string, images : string[] }) {
                       ) : null}
                     </Flex>
                   }
-                  subTitle={`${addDelimiter(room.price)}원 / `.concat(
+                  subTitle={`${addDelimiter(priceConvert(price, room.roomName))}원 / `.concat(
                     room.refundable ? '환불가능' : '환불불가',
                   )}
                 />
               }
               right={
-                <Button disabled={매진인가} onClick = {()=>{
-                  if(user == null){
-                    open({
-                      title : "로그인이 필요한 기능입니다.",
-                      onButtonClick : () => {
-                        navigate('/signin')
-                      }
-                    })
-                    return
-                  }
-                  navigate(`/schedule${params}`)
-                }}>
-                  {매진인가 === true ? '매진' : '선택'}
+                <Button 
+                  disabled={매진인가} 
+                  // onClick = {()=>{
+                  //   if(user == null){
+                  //     open({
+                  //       title : "로그인이 필요한 기능입니다.",
+                  //       onButtonClick : () => {
+                  //         navigate('/signin')
+                  //       }
+                  //     })
+                  //     return
+                  //   }
+                  //   navigate(`/schedule${params}`)
+                  // }}
+                >
+                  {매진인가 === true ? '매진' : '가능'}
                 </Button>
               }
             />
@@ -117,6 +139,8 @@ const imageStyles = css`
 `
 
 export default Rooms
+
+
 
 
 // 

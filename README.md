@@ -4,7 +4,9 @@
 
 ## 프로젝트 소개
 
-일본 주요 지역 호텔의 정보들과 예약이 가능한 어플리케이션입니다
+일본 주요 지역 호텔의 정보들과 예약이 가능한 어플리케이션입니다. 
+
+네이버에서 미용실을 예약하는 도중에 이 예약이란 것은 어떤 로직과 상태로 구성되며, 생각보다 구현이 어려울 것 같다는 생각에 만들어보게 되었습니다.
 
 ---
 ## 개발자 소개
@@ -30,7 +32,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
-![Context-API](https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 
 ### Config
@@ -72,7 +74,14 @@
 3. 번들의 사이즈가 `1.5 MB` 까지 줄었으며 다운로드 시간이 `1`초에서 `0.3`초로 줄었습니다.
 4. 추가로 LCP가 `1.81`에서 `1.48`까지 감소하였습니다. 
 
-#### intersection Observer 로 로딩속도 최적화
+#### 호텔 상세페이지 intersection Observer 로 최적화
+
+1. 호텔 상세페이지에는 많은 정보가 담겨있고 스크롤을 아래까지 내려야합니다.
+2. 아래로 내린 곳에는 추천 호텔과 댓글 컴포넌트가 존재하는데, 이 컴포넌트들은 네트워크에 데이터를 요청합니다.
+3. 위의 지연로딩과 마찬가지로 뷰포트에 들어올 때 서버에 요청을 하여 최적화를 수행합니다. 이때 `intersection Observer`를 통해 뷰포트에 들어올 때 `react-query` 의 `enabled` 를 `true` 로 만들어 데이터를 불러옵니다.
+4. `LCP` 가 `1.90` 에서 `1.74` 로 감소하였습니다.
+5. 하지만 스크롤을 내리면 데이터를 불러오면서 갑자기 스켈레톤 UI가 나타나는데 저는 단 한 번도 어플리케이션들을 사용하면서 이러한 경험을 해본 적이 없습니다.
+6. 차라리 사용자 경험을 위해 이러한 부분을 지우고 최대한 많은 컴포넌트를 스플리팅하여 `LCP` 를 `1.60`까지 감소시켰습니다.
 
 ## 후기
 

@@ -1,9 +1,6 @@
 import { css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
-
 import { createPortal } from 'react-dom'
-import { colors } from '@styles/colorPalette'
-
 import Button from '@shared/Button'
 
 interface FixedBottomButtonProps {
@@ -50,7 +47,6 @@ const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f7f7f7bf;
   padding: 20px 10px 8px;
   transform: translateY(100%);
   animation: ${slideup} 0.5s ease-in-out forwards;

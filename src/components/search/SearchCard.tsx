@@ -1,7 +1,9 @@
 import { HOTEL_2 } from '@/models/hotel'
+import { convertCity } from '@/utils/convert'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
+import PositionMarker from '../icons/PositionMarker'
 import Star from '../icons/Star'
 import YenIcon from '../icons/YenIcon'
 
@@ -25,7 +27,9 @@ export default function SearchCard({
                 />
                 <div css = {infoStyles}>
                     <div className='title'>{hotel.name}</div>
-                    <div className='city'>{convertCity(hotel.city)}</div>
+                    <div className='city'>
+                        <PositionMarker />
+                        {convertCity(hotel.city)}</div>
                     <div css = {ratingStyles}>
                         <Star color='orange'/>
                         {hotel.starRating}
@@ -34,8 +38,9 @@ export default function SearchCard({
             </div>
             <div css = {priceContainerStyles}>
                 <div css = {priceStyles}>
-                    <YenIcon size = "17" />
+                    {"최저가 "}
                     {hotel.price}
+                    <YenIcon size = "17" />
                 </div>
             </div>
         </Container>
@@ -50,10 +55,11 @@ const Container = styled.div`
     display : flex;
     text-align : right;
     background : white;
-    padding : 10px;
+    margin : 10px;
     flex-direction : row;
     justify-content : space-between;
     font-size : 1.0rem;
+    box-shadow : 3px 3px 3px rgba(141, 239, 238, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
 `
 const contentsStyles = css`
     display : flex;
@@ -72,6 +78,7 @@ const infoStyles = css`
     }
 
     .title{
+        color : black;
         font-weight : bold;
     }
 `
@@ -89,15 +96,6 @@ const priceContainerStyles = css`
     margin-bottom : 6px;
 `
 const priceStyles = css`
+    color : brown;
     display : flex;
 `
-
-function convertCity(city : string){
-    switch(city){
-        case "Osaka" : return "오사카"
-        case "Fukuoka" : return "후쿠오카"
-        case "Tokyo" : return "도쿄"
-        case "Kyoto" : return "교토"
-        default : return ""
-    }
-}

@@ -1,15 +1,16 @@
 import useSearchHotels from '@/hook/useSearchResult'
 import { HOTEL_2 } from '@/models/hotel';
-import { searchAtom } from '@/store/atom/search'
+import { ReduxState } from '@/store';
 import { lazy } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useRecoilValue } from 'recoil'
+import { useSelector } from 'react-redux';
 
 const SearchCard = lazy(()=>import("./SearchCard"));
 
 export default function SearchList() {
 
-  const searchState = useRecoilValue(searchAtom);
+  // const searchState = useRecoilValue(searchAtom);
+  const searchState = useSelector((state : ReduxState) => state.searchQuery)
 
   const { data : hotels, hasNextPage, loadMore} = useSearchHotels({ 
     keyword : searchState?.keyword,

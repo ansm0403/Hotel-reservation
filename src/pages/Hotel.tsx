@@ -4,21 +4,22 @@ import Top from '@shared/Top'
 import useHotel from '@components/hotel/hooks/useHotel'
 // import RecommendHotels from '@/components/hotel/RecommandHotels'
 // import ActionButtons from '@/components/hotel/ActionButtons'
-import Review from '@/components/hotel/Review'
 import SEO from '@/components/shared/SEO'
 import { css } from '@emotion/react'
-import { lazy, useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 // import Contents from '@/components/hotel/Contents'
-import RecommandCarousel from '@/components/hotel/RecommandCarousel'
-import GoBackIcon from '@/components/icons/GoBackIcon'
 import { useSetRecoilState } from 'recoil'
 import { navbarAtom } from '@/store/atom/navbar'
 
+const GoBackIcon = lazy(()=>import('@/components/icons/GoBackIcon'))
 const InfoIcons = lazy(()=>import('@/components/hotel/InfoIcons'))
 const Carousel = lazy(()=>import("@components/hotel/Carousel"))
 const Rooms = lazy(()=>import('@/components/hotel/Rooms'))
 const Map = lazy(()=>import('@/components/hotel/Map'))
 const ReservationButton = lazy(()=>import('@/components/hotel/ReservationButton'))
+const RecommandCarousel = lazy(()=>import('@/components/hotel/RecommandCarousel'))
+const Review = lazy(()=>import('@/components/hotel/Review'))
+
 
 function HotelPage() {
 
@@ -35,7 +36,7 @@ function HotelPage() {
   const { isLoading, data } = useHotel({ id })
 
   if (data == null || isLoading) {
-    return <div>Loading...</div>
+    return <div></div>
   }
 
   const { name, comment, images, contents, location, recommendHotels, mainImageUrl, starRating, city, price } = data
@@ -47,6 +48,7 @@ function HotelPage() {
   const hotelImage = [mainImageUrl, ...images]
 
   return (
+    <Suspense fallback = {<></>}>
     <div css = {containerStyles}>
       <SEO title={name} description = {comment} image = {images[0]} />
       <GoBackIcon 
@@ -67,12 +69,13 @@ function HotelPage() {
       </div>
       <ReservationButton id = {id} price = {price}/>
     </div>
+    </Suspense>
   )
 }
 
 const containerStyles = css`
   position : relative;
-
+  padding-bottom : 30px;
   .back {
     position : fixed;
     top : 20px;

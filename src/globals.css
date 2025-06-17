@@ -1,9 +1,31 @@
+@font-face {
+    font-family:'NanumSquareRound';
+    src: url("./assets/fonts/NanumSquareRoundOTFR.woff2") format("woff2"),
+    url("./assets/fonts/NanumSquareRoundOTFR.woff") format("woff"),
+    url("./assets/fonts/NanumSquareRoundR.ttf") format("ttf");
+}
 
+@font-face {
+    font-family: 'jua';
+    src: url("./assets/fonts/Jua-Regular.woff2") format("woff2");
+    src: url("./assets/fonts/Jua-Regular.woff") format("woff");
+    src: url("./assets/fonts/Jua-Regular.ttf") format("ttf");
+}
 
 body {
     background-color: white;
+    font-family: 'NanumSquareRound' !important;
+    font-size: 1.2rem;
 }
 
 .markdown > * {
     all: revert;
+}
+
+/* .carousel {
+    width : 80%;
+} */
+
+li .react-multi-carousel-item .carousel {
+    width : 290px;
 }

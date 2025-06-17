@@ -1,12 +1,18 @@
 import { useQuery } from 'react-query'
 import { getRecommendHotels } from '@remote/hotel'
 
-function useRecommendHotels({ hotelIds }: { hotelIds: string[] }) {
+function useRecommendHotels({ 
+  hotelIds,
+  inView
+}: { 
+  hotelIds: string[] 
+  inView? : boolean
+}) {
   return useQuery(
     ['recommendHotels', JSON.stringify(hotelIds)],
     () => getRecommendHotels(hotelIds),
     {
-      enabled: hotelIds.length > 0,
+      enabled: inView 
     },
   )
 }

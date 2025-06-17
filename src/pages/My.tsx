@@ -2,15 +2,15 @@
 import MyInfoBox from "@/components/my/MyInfoBox";
 import useReservations from "@/components/reservation-list/hooks/useReservations";
 import useLike from "@/hook/like/useLike";
-import { colors } from "@/styles/colorPalette";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import Spacing from "@/components/shared/Spacing";
-import { Reservation, ReservationSnapshot } from "@/models/reservation";
+import { ReservationSnapshot } from "@/models/reservation";
 import { Hotel } from '@models/hotel'
 import { Like } from '@models/like'
 import Flex from "@/components/shared/Flex";
 import { css } from "@emotion/react";
+import { formatTimestamp } from "@/utils/formatTime";
 
 
 export default function MyPage() {
@@ -29,11 +29,14 @@ export default function MyPage() {
         contents = {
           isLoading 
           ? <MyInfoBox.Skeleton />
-          : <ReservationContents reservations={reservations}/>
+          : <ReservationContents 
+              reservations={reservations}
+              onClick = {(id : string) => navigate(`/hotel/${id}`)}
+            />
         }
-        buttonLabel = "예약 전체 내역 보기"
+        buttonLabel = "예약 내역 자세히 보기"
         handleButton={()=>{navigate("/reservation/list")}}
-        buttonDisabled = {reservationCount < 2 ? true : false}
+        buttonDisabled = {false}
       />
       <Spacing size = {10} />
       <MyInfoBox 
@@ -42,9 +45,12 @@ export default function MyPage() {
         contents = {
           isLoading 
           ? <MyInfoBox.Skeleton />
-          : <LikeContents likes={likes}/>
+          : <LikeContents 
+              likes={likes}
+              onClick = {(id : string) => navigate(`/hotel/${id}`)}
+            />
         }
-        buttonLabel = "찜목록 전체 내역 보기"
+        buttonLabel = "찜목록 내역 자세히 보기"
         handleButton={() => navigate("/like/list")}
       />
     </Container>
@@ -58,8 +64,10 @@ interface ReservContentsProps {
 
 function ReservationContents({
   reservations,
+  onClick 
 }:{ 
   reservations : ReservContentsProps[] | undefined
+  onClick : (id : string) => void
 }){
 
   const reservationCount = 
@@ -79,9 +87,10 @@ function ReservationContents({
                 alt = "myPage-reservation"
                 width = {400}
                 css = {contentsImageStyle}
+                onClick = {(e) => onClick(hotel.id)}
               />
               <h5 style = {{fontSize : "15px", fontWeight : "bold"}}>{hotel.name}</h5>
-              <p>{`${reservation.startDate} ~ ${reservation.endDate}`}</p>                  
+              <p>{`${formatTimestamp(reservation.startDate)} ~ ${formatTimestamp(reservation.endDate)}`}</p>                  
             </Flex>
           </li>
         )}
@@ -94,8 +103,10 @@ function ReservationContents({
 
 function LikeContents({
   likes,
+  onClick
 }:{
-  likes : Like[] | undefined
+  likes : Like[] | undefined,
+  onClick : (id : string) => void
 }){
 
   const likeCount = 
@@ -114,6 +125,7 @@ function LikeContents({
               src = {like.hotelMainImageUrl}
               alt = "myPage-like"
               css = {contentsImageStyle}
+              onClick = {(e) => onClick(like.hotelId)}
             />
             <h5 style = {{fontWeight : "bold", textAlign : "center"}}>{like.hotelName}</h5>
           </Flex>
@@ -131,6 +143,7 @@ const Container = styled.div`
   justify-content : center;
   align-items : center;
   padding-bottom : 40px;
+  margin-bottom : 30px;
 `
 
 const contentsImageStyle = css`

@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 import { getLikes, toggleLike } from '@remote/like'
-import { Hotel } from '@models/hotel'
+import { Hotel, HOTEL_2 } from '@models/hotel'
 import useUser from '../auth/useUser'
 import { useAlertContext } from '@contexts/AlertContext'
 
@@ -20,7 +20,7 @@ function useLike() {
   )
 
   const { mutate } = useMutation(
-    ({ hotel }: { hotel: Pick<Hotel, 'name' | 'id' | 'mainImageUrl'> }) => {
+    ({ hotel }: { hotel: Pick<HOTEL_2, 'name' | 'id' | 'mainImageUrl' | 'city' | 'price' | 'starRating'> }) => {
       if (user == null) {
         throw new Error('로그인필요')
       }

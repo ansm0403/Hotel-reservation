@@ -3,7 +3,7 @@ import { differenceInMilliseconds, parseISO } from 'date-fns'
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom'
 
-import { Hotel } from '@models/hotel'
+import { Hotel, HOTEL_2 } from '@models/hotel'
 import ListRow from '@shared/ListRow'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
@@ -18,12 +18,12 @@ function HotelItem({
   isLike,
   onLike,
 }: {
-  hotel: Hotel
+  hotel: HOTEL_2
   isLike: boolean
   onLike: ({
     hotel,
   }: {
-    hotel: Pick<Hotel, 'name' | 'id' | 'mainImageUrl'>
+    hotel: Pick<HOTEL_2, 'name' | 'id' | 'mainImageUrl' | 'price' | 'starRating' | 'city'>
   }) => void
 }) {
   const [remainedTime, setRemainedTime] = useState(0)
@@ -84,6 +84,9 @@ function HotelItem({
         name: hotel.name,
         mainImageUrl: hotel.mainImageUrl,
         id: hotel.id,
+        price : hotel.price,
+        starRating : hotel.starRating,
+        city : hotel.city
       },
     })
   }

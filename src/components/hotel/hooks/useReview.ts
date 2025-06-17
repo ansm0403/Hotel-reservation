@@ -4,12 +4,22 @@ import { getReviews, writeReview, removeReview } from '@remote/review'
 import useUser from '@/hook/auth/useUser'
 
 
-function useReview({ hotelId }: { hotelId: string }) {
+function useReview({ 
+  hotelId,
+  inView
+}: { 
+  hotelId: string,
+  inView? : boolean
+}) {
   const user = useUser()
   const client = useQueryClient()
 
-  const { data, isLoading } = useQuery(['reviews', hotelId], () =>
-    getReviews({ hotelId }),
+  const { data, isLoading } = useQuery(
+    ['reviews', hotelId]
+    , () => getReviews({ hotelId }),
+    {
+      enabled : inView
+    }
   )
 
   const { mutateAsync: write } = useMutation(

@@ -1,8 +1,7 @@
-import { css } from '@emotion/react'
+
 import styled from '@emotion/styled'
-import { addDays, differenceInDays, format, isSameDay, parseISO } from 'date-fns'
+import {  differenceInDays, format, isSameDay, parseISO } from 'date-fns'
 import { ko } from 'date-fns/locale/ko'
-import React, { useState } from 'react'
 import { DateRange, DayPicker } from 'react-day-picker'
 
 interface Selected {

@@ -1,4 +1,4 @@
-import priceConvert from '@/utils/priceConvert'
+import priceConvert from '@/utils/convert'
 import styled from '@emotion/styled'
 import { MouseEvent } from 'react'
 import { useSearchParams } from 'react-router-dom'
@@ -21,18 +21,14 @@ export default function SubmitButton({
 
   if(room && room !== "선택"){
     price = priceConvert(yen, room);
-    console.log("가격 초기 설정")
     if(adults) {
       price = price + ((adults-2) * 20000)
-      console.log("성인 초기 설정")
     }
     if(children) {
       price = price + (children * 10000)
-      console.log("아동 초기 설정")
     }
     if(nights !== 0) {
       price = price * nights
-      console.log("날짜 초기 설정")
     }
   }
   

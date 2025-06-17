@@ -1,5 +1,5 @@
 import { roomsAtom } from "@/store/atom/rooms"
-import priceConvert from "@/utils/priceConvert"
+import priceConvert from "@/utils/convert"
 import { css } from "@emotion/react"
 import { ChangeEvent, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
@@ -39,6 +39,7 @@ export default function RoomSelect({
                     {
                         rooms?.map((room, index)=>(
                             <option 
+                                key = {room.id}
                                 value = {room.roomName}
                                 data-roomIdx = {index}
                                 data-roomId = {room.id}

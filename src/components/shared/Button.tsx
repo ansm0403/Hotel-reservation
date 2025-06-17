@@ -24,9 +24,11 @@ const BaseButton = styled.button<ButtonProps>(
     cursor: 'pointer',
     fontWeight: 'bold',
     borderRadius: '6px',
+    color : "white",
+    background : 'linear-gradient(to right,rgb(196,173,141) 0%,rgb(179,157,128) 34.48%, rgb(153,133,108) 100%)',
   },
-  ({ color = 'primary', weak }) =>
-    weak ? buttonWeakMap[color] : buttonColorMap[color],
+  // ({ color = 'primary', weak }) =>
+  //   weak ? buttonWeakMap[color] : buttonColorMap[color],
   ({ size = 'small' }) => buttonSizeMap[size],
   ({ full }) =>
     full

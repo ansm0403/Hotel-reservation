@@ -1,5 +1,4 @@
 import { HOTEL_2 } from "@/models/hotel"
-import { EmotionJSX } from "@emotion/react/types/jsx-namespace"
 import styled from "@emotion/styled"
 import { lazy, ReactElement, useState } from "react"
 

@@ -1,18 +1,24 @@
+import CalendarIcon from '@/components/icons/CalendarIcon'
+import PlaneIcon from '@/components/icons/PlaneIcon'
+import WonIcon from '@/components/icons/WonIcon'
 import useReservations from '@/components/reservation-list/hooks/useReservations'
-import Button from '@/components/shared/Button'
 import FixedBottomButton from '@/components/shared/FixedBottomButton'
+import { useAlertContext } from '@/contexts/AlertContext'
 import { navbarAtom } from '@/store/atom/navbar'
+import { convertCity } from '@/utils/convert'
+import { formatTimestamp } from '@/utils/formatTime'
 import styled from '@emotion/styled'
-import ListRow from '@shared/ListRow'
-import { Timestamp } from 'firebase/firestore'
 import { useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil'
+
 
 function ReservationListPage() {
   const { data, isLoading, deleteReservation } = useReservations()
   const navigate = useNavigate();
   const setNavbarState = useSetRecoilState(navbarAtom);
+
+  const { open } = useAlertContext();
 
   useEffect(()=>{
     setNavbarState(false);
@@ -50,19 +56,49 @@ function ReservationListPage() {
            const to = formatTimestamp(reservation.endDate);
            
           return(
-            <CardContainer>
+            <CardContainer key = {reservation.id}>
               <div>
                 <img 
                   src = {hotel.mainImageUrl}
                   width = {150} 
-                  height={150} 
+                  height={170} 
                 />
               </div>
-              <div>
-                <div>{hotel.name}</div>
-                <div>{hotel.city}</div>
-                <div>{reservation.price}원</div>
-                <div>3박 4일</div>
+              <div className='contents'>
+                <div className='name'>{hotel.name}</div>
+                <div className='content'>
+                  <PlaneIcon size="18px" color='gray'/>
+                  <span>
+                    {convertCity(hotel.city)}
+                  </span>
+                </div>
+                <div className='content'>
+                  <CalendarIcon  color='gray'/>
+                  3박 4일
+                </div>
+                <div className='content'>
+                  <WonIcon size = "20px" color='gray'/>
+                  {reservation.price}원
+                </div>
+                <div>
+                  <button 
+                  className='button'
+                  onClick = {()=>{
+                    open({
+                      title : "예약을 취소하시겠습니까?",
+                      onButtonClick : () => {
+                        handleCancelReservation({
+                          hotelId : hotel.id, 
+                          roomId : reservation.roomId, 
+                          reservId : reservation.id
+                        })
+                      }
+                    })
+                  }}
+                >
+                  예약 취소
+                </button>
+                </div>
               </div>
               {/* <ListRow
               key={reservation.id}
@@ -109,7 +145,40 @@ function ReservationListPage() {
 const CardContainer = styled.div`
   display : flex;
   flex-direction : row;
-  padding : 10px 30px;
+  margin : 10px 30px;
+  overflow : hidden;
+  gap : 10px;
+  border-top-left-radius : 20px;
+  border-bottom-left-radius : 20px;
+  box-shadow: 2px 2px 2px rgba(170, 181, 181, 0.36), 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  .contents {
+    padding-top : 10px;
+    padding-bottom : 20px;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-around;
+    gap : 10px;
+  }
+
+  .name {
+    font-size : 0.9rem;
+    font-weight : bold;
+  }
+
+  .content {
+    display : flex;
+    gap : 5px;
+  }
+
+  .button {
+    display : flex;
+    flex-direction : flex-end;
+    background : linear-gradient(to right,rgb(196,173,141) 0%,rgb(179,157,128) 34.48%, rgb(153,133,108) 100%);
+    color : white;
+    border-radius : 5px;
+    padding : 5px;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -136,30 +205,5 @@ const NoDataList = styled.div`
   font-size : 1.5rem;
   transform : translate(-50%, -50%);
 `
-
-
-// Firestore에서 가져온 데이터가 Timestamp 객체인지 확인해야 합니다. 
-// typeof timestamp를 사용하여 데이터 타입을 확인해 볼 수 있습니다. 
-// 만약 문자열이나 숫자로 되어 있다면, new Timestamp(seconds, nanoseconds) 와 같은 방식으로 변환해야 합니다.
-function formatTimestamp(timestamp : Timestamp){
-  if (typeof timestamp === 'object' && timestamp !== null && timestamp.seconds !== undefined && timestamp.nanoseconds !== undefined) {
-     // timestamp가 Firestore Timestamp 객체인 경우
-      const date = timestamp.toDate();
-      // date 사용 로직
-      const year = date.getFullYear();
-      const month = String(date.getMonth()+1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0')
-
-      return `${year}년 ${month}월 ${day}일`
-   } else if (typeof timestamp === 'string' || typeof timestamp === 'number') {
-       // timestamp가 숫자 또는 문자열인 경우 Timestamp 객체로 변환
-       const seconds = typeof timestamp === 'string' ? parseInt(timestamp, 10) : timestamp;
-       const date = new Timestamp(seconds, 0).toDate();
-       // date 사용 로직
-   } else {
-     // timestamp가 Timestamp 객체가 아닌 경우 처리
-     console.log("Invalid timestamp type:", typeof timestamp);
-   }
-}
 
 export default ReservationListPage

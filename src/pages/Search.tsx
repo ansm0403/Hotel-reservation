@@ -1,4 +1,5 @@
 
+import Avatar from '@/components/home/Avatar';
 import { lazy } from 'react'
 
 const AboveContainer = lazy(()=>import("@/components/home/AboveContainer"));
@@ -8,9 +9,10 @@ const SearchList = lazy(()=>import('@/components/search/SearchList'));
 export default function SearchPage() {
   return (
     <>
-      <AboveContainer height='150px'>
-          <SearchBar />    
-      </AboveContainer>
+      <AboveContainer>
+        <div style = {{height : "19.2px"}}></div>
+        <SearchBar />   
+      </AboveContainer> 
       <SearchList />
     </>
   )

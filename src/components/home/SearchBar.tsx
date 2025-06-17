@@ -1,8 +1,8 @@
 import useDebounce from '@/hook/useDebounce';
-import { searchAtom } from '@/store/atom/search';
+import { searchQueryActions } from '@/store';
 import { css } from '@emotion/react'
 import { ChangeEvent, lazy, useEffect, useState } from 'react'
-import { useSetRecoilState } from 'recoil';
+import { useDispatch } from 'react-redux';
 
 const SearchIcons = lazy(()=>import("../icons/SearchIcons"));
 
@@ -11,26 +11,26 @@ export default function SearchBar({ onClick } : { onClick? : () => void}) {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const debouncedQuery = useDebounce(searchQuery || "", 500);
-  const setSearch = useSetRecoilState(searchAtom);
+  // const setSearch = useSetRecoilState(searchAtom);
+
+  const setSearch = useDispatch();
 
   useEffect(()=>{
     if(debouncedQuery == null || city == null){
       return;
     }
-    setSearch({
+    setSearch(searchQueryActions.SET({
       keyword : debouncedQuery,
       city
-    })
+    }))
   }, [debouncedQuery, city])
 
   const handleSelect = (e : ChangeEvent<HTMLSelectElement>) => {
-    console.log("선택 : ", e.target.value);
     setCity(e.target.value);
   }
 
   const handleInput = (e : ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-    console.log("키워드 : ", searchQuery);
   }
 
   return (
@@ -61,39 +61,51 @@ export default function SearchBar({ onClick } : { onClick? : () => void}) {
 
 const containerStyles = css`
     display : flex;  
-    margin-top : 60px;
+    width : 90%;
+    margin : auto;
+    margin-top : 80px;
     gap : 10px;
-    justify-content : center;
+    justify-content : space-around;
     flex-direction : column;
     @media (min-width : 365px){
       flex-direction : row;
     }
 `
 const searchContainerStyles = css`
-    width : 62%;
-    padding : 3px;
+    width : 98%;
+    @media (min-width : 365px){
+      width : 70%;
+    }
+    padding : 0px;
     display : flex;
     flex-direction : column;
     background-color : white;
-    border-radius : 20px;
+    border-radius : 10px;
     cursor : pointer;
 `
 const inputContainerStyles = css`
   display : flex;
   align-items : center;
+  background : white;
+  border : 1px solid gray;
+  border-radius : 5px;
+  padding-left : 10px;
 `
 const inputStyles = css`
   border : none;
   width : 100%;
+  background : white;
+  padding : 10px;
 `
 const selectStyles = css`
   border : 1px solid #eee;
-  height : 36px;
-  border-radius : 20px;
-  padding : 3px;
+  // height : 36px;
+  border-radius : 10px;
+  padding : 4px;
   &:focus : red;
   cursor : pointer;
-  color : gray;
+  background : linear-gradient(to right,rgb(196,173,141) 0%,rgb(179,157,128) 34.48%, rgb(153,133,108) 100%);
+  color : white;
 
   option {
     color : black;

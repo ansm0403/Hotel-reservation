@@ -43,7 +43,7 @@ export default function MyInfoBox({
           <Spacing size = {10} />
           {
             buttonLabel && 
-            <Button disabled = {buttonDisabled} onClick={handleButton}>{buttonLabel}</Button>
+            <Button  disabled = {buttonDisabled} onClick={handleButton}>{buttonLabel}</Button>
           }
         </Flex>     
       </Container>                                    
@@ -87,5 +87,4 @@ const reservationCountStyle = css`
   padding-left : 10px;
   color : ${colors.blue}
 `
-
 MyInfoBox.Skeleton = MySkeleton;

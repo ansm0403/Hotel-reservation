@@ -12,7 +12,7 @@ export default function LikeIcon({
 
     const { data: likes, mutate: like } = useLike()
 
-    const { name, mainImageUrl, id } = hotel
+    const { name, mainImageUrl, id, city, price, starRating } = hotel
     
     const isLike = Boolean(likes?.find((like) => like.hotelId === id))
 
@@ -26,6 +26,9 @@ export default function LikeIcon({
                 name,
                 mainImageUrl,
                 id,
+                city,
+                price,
+                starRating
               },
             })
           }}

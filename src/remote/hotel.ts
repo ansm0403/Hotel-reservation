@@ -20,12 +20,12 @@ import { Hotel, HOTEL_2 } from '@models/hotel'
 import { store } from './firebase'
 import { Room } from '@/models/room'
 
-export async function getHotels(pageParams?: QuerySnapshot<Hotel>) {
+export async function getHotels(pageParams?: QuerySnapshot<HOTEL_2>) {
   const hotelsQuery =
     pageParams == null
-      ? query(collection(store, COLLECTIONS.HOTEL), limit(10))
+      ? query(collection(store, COLLECTIONS.HOTELS), limit(10))
       : query(
-          collection(store, COLLECTIONS.HOTEL),
+          collection(store, COLLECTIONS.HOTELS),
           startAfter(pageParams),
           limit(10),
         )
@@ -37,7 +37,7 @@ export async function getHotels(pageParams?: QuerySnapshot<Hotel>) {
       ({
         id: doc.id,
         ...doc.data(),
-      }) as Hotel,
+      }) as HOTEL_2,
   )
 
   const lastVisible = hotelsSnapshot.docs[hotelsSnapshot.docs.length - 1]
@@ -104,11 +104,11 @@ export async function getRecommandHotels(){
   }) as HOTEL_2)
 }
 
-export async function getPopulationHotels(){
+export async function getPopulationHotel(){
   const hotelsQuery = query(
     collection(store, COLLECTIONS.HOTELS),
     orderBy("starRating", "desc"),
-    limit(3)
+    limit(5)
   )
 
   const hotelSnapshot = await getDocs(hotelsQuery);
@@ -117,6 +117,38 @@ export async function getPopulationHotels(){
     id : doc.id,
     ...doc.data()
   }) as HOTEL_2)
+}
+
+export async function getPopulationHotels({
+  pageParam
+}: {
+  pageParam? : QuerySnapshot
+}){
+  const hotelsQuery = pageParam == null
+  ? query(
+    collection(store, COLLECTIONS.HOTELS),
+    orderBy("starRating", "desc"),
+    limit(10)
+  )
+  : query(
+    collection(store, COLLECTIONS.HOTELS),
+    orderBy("starRating", "desc"),
+    startAfter(pageParam),
+    limit(10)
+  )
+
+  const hotelSnapshot = await getDocs(hotelsQuery);
+  const item = hotelSnapshot.docs.map((doc)=>({
+    id : doc.id,
+    ...doc.data()
+  }) as HOTEL_2)
+
+  const lastVisible = hotelSnapshot.docs[hotelSnapshot.docs.length - 1];
+
+  return {
+    item,
+    lastVisible
+  }
 }
 
 export async function getSearchHotels({ 

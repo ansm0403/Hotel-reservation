@@ -22,6 +22,7 @@ export default function AboveContainer({
 
 const containerStyles = css`
     width : 100%;
+    height : 200px;
     display : inline-block;
     position : relative;
     top : 0;

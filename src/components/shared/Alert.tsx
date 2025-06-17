@@ -5,6 +5,7 @@ import Text from './Text'
 import Dimmed from './Dimmed'
 import Flex from './Flex'
 import Button from './Button'
+import { useAlertContext } from '@/contexts/AlertContext'
 
 interface AlertProps {
   open?: boolean
@@ -21,6 +22,9 @@ function Alert({
   buttonLabel = '확인',
   onButtonClick,
 }: AlertProps) {
+
+  const { close } = useAlertContext();
+
   if (open === false) {
     return null
   }
@@ -44,6 +48,11 @@ function Alert({
             style={{ marginTop: 12, border: 'none' }}
           >
             {buttonLabel}
+          </Button>
+          <Button 
+            onClick={(e)=>close()}
+            style={{ marginLeft : 12 ,marginTop: 12, border: 'none' }}>
+            취소
           </Button>
         </Flex>
       </AlertContainer>

@@ -14,7 +14,7 @@ import {
   import { store } from './firebase'
   import { COLLECTIONS } from '@/constants'
   import { Like } from '@models/like'
-  import { Hotel } from '@models/hotel'
+  import { Hotel, HOTEL_2 } from '@models/hotel'
   
   export async function getLikes({ userId }: { userId: string }) {
     const snapshot = await getDocs(
@@ -40,7 +40,7 @@ import {
     hotel,
     userId,
   }: {
-    hotel: Pick<Hotel, 'name' | 'id' | 'mainImageUrl'>
+    hotel: Pick<HOTEL_2, 'name' | 'id' | 'mainImageUrl' | 'city' | 'price' | 'starRating'>
     userId: string
   }) {
     const findSnapshot = await getDocs(
@@ -99,6 +99,9 @@ import {
         hotelId: hotel.id,
         hotelName: hotel.name,
         hotelMainImageUrl: hotel.mainImageUrl,
+        hotelPrice : hotel.price,
+        hotelRating : hotel.starRating,
+        hotelRegion : hotel.city,
         userId,
       }
   

@@ -50,7 +50,7 @@ const YenIcon = lazy(() => import('../icons/YenIcon'))
 
 const containerStyles = css`
     padding : 1rem;
-    background-color : white;
+    background : rgba(0, 0, 0, 0.035);
     margin : 30px;
     border-radius : 20px;
     text-align : center;

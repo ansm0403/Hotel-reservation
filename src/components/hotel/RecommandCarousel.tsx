@@ -1,5 +1,7 @@
-import { HOTEL_2 } from '@/models/hotel'
+
 import { css } from '@emotion/react'
+import { useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import { Link } from 'react-router-dom'
 import MultiCarousel from '../shared/MultiCarousel'
@@ -12,19 +14,28 @@ export default function RecommandCarousel({
     recommandHotels  : string[]
 }) {
 
-    const { data : hotels, isLoading } = useRecommendHotels({ hotelIds: recommandHotels  })
+    const { ref, inView } = useInView({
+        triggerOnce : true,
+    })
+    const [ view, setView ] = useState(false);
+
+    const { data : hotels, isLoading } = useRecommendHotels({ hotelIds: recommandHotels, inView : view })
+
+    useEffect(()=>{
+        setView(inView);
+    }, [inView])
 
     if (hotels == null || isLoading) {
-    return null
+     return <div ref = {ref}></div>
     }
 
     return (
-        <div css = {constinerStyles}>
+        <div css = {constinerStyles} >
             <h4 css = {titleStyles}>추천 호텔</h4>
             <MultiCarousel>
             {
                 hotels?.map((hotel)=>(
-                    <Link to = {`/hotel/${hotel.id}`}>
+                    <Link to = {`/hotel/${hotel.id}`} key = {hotel.id}>
                         <HotelCard hotel={hotel} isInfo = {false} />
                     </Link>
                 ))
@@ -38,6 +49,18 @@ const constinerStyles = css`
     margin : auto;
     margin-top : 2rem;
     width : 90%;
+
+    .react-multi-carousel-lis
+        width : 100%;
+        padding : 0px;
+        overflow : hidden;
+
+        .react-multi-carousel-track  {
+            .p-3 {
+            margin : 10px;
+        }
+    }
+  }
 `
 const titleStyles = css`
     margin-bottom : 1.3rem;

@@ -8,6 +8,8 @@ import { css, Global } from '@emotion/react';
 import { RecoilRoot } from 'recoil';
 import { AlertContextProvider } from './contexts/AlertContext';
 import "./globals.css"
+import { Provider } from 'react-redux';
+import store from './store';
 
 const client = new QueryClient({
   defaultOptions : {
@@ -23,6 +25,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <>
+    <Provider store = {store}>
     <Global styles = {globalStyles} />
     <RecoilRoot>
       <QueryClientProvider client={client}>
@@ -31,6 +34,7 @@ root.render(
         </AlertContextProvider>
       </QueryClientProvider>
     </RecoilRoot>
+    </Provider>
   </>
   // </React.StrictMode>
 );

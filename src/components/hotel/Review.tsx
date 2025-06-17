@@ -11,9 +11,15 @@ import Spacing from '@shared/Spacing'
 import Button from '@shared/Button'
 import TextField from '@shared/TextField'
 import useUser from '@/hook/auth/useUser'
+import { useInView } from 'react-intersection-observer'
 
 function Review({ hotelId }: { hotelId: string }) {
-  const { data: reviews, isLoading, write, remove } = useReview({ hotelId })
+
+  const { ref, inView } = useInView({
+        triggerOnce : true,
+  })
+  
+  const { data: reviews, isLoading, write, remove } = useReview({ hotelId, inView })
   const user = useUser()
   const [text, setText] = useState('')
 
@@ -78,14 +84,14 @@ function Review({ hotelId }: { hotelId: string }) {
   }
 
   return (
-    <div style={{ margin: '40px 0' }}>
+    <div ref = {ref} style={{ margin: '40px 0' }}>
       <Text bold={true} typography="t4" style={{ padding: '0 24px' }}>
         리뷰
       </Text>
       <Spacing size={16} />
       {reviewRows()}
       {user != null ? (
-        <div style={{ padding: '0 24px' }}>
+        <div style={{ padding: '0 24px', marginBottom : '40px' }}>
           <TextField value={text} onChange={handleTextChange} />
           <Spacing size={6} />
           <Flex justify="flex-end">

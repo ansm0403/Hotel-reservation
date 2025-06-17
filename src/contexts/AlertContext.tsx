@@ -15,7 +15,8 @@ import {
   type AlertOptions = Omit<AlertProps, 'open'>
   
   interface AlertContextValue {
-    open: (options: AlertOptions) => void
+    open: (options: AlertOptions) => void,
+    close : () => void
   }
   
   const Context = createContext<AlertContextValue | undefined>(undefined)
@@ -54,7 +55,9 @@ import {
       [close],
     )
   
-    const values = useMemo(() => ({ open }), [open])
+    const values = useMemo(() => ({ 
+      open, close
+    }), [open])
   
     return (
       <Context.Provider value={values}>

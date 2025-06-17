@@ -58,7 +58,6 @@ export default function BookingPage() {
     price : 0
   })
 
-  console.log("예약 데이터", bookingData);
 
   const handleGoBack = () => {
     window.history.back();

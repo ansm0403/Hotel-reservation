@@ -49,6 +49,7 @@
 
 ## 실행 결과
 
+<img width="491" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/0aa72e76-433e-43b6-b8f7-741288771402" />
 
 
 ## 실행 방법

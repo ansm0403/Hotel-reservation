@@ -49,7 +49,11 @@
 
 ## 실행 결과
 
-<img width="491" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/0aa72e76-433e-43b6-b8f7-741288771402" />
+<img width="200" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/4c5fbe41-473f-4664-b9cc-080f46ad6fb1" />
+<img width="200" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/3e9860fd-a1b2-471c-94f1-a777394088ce" />
+<img width="200" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/7bb1d2bb-5944-40e8-895f-581abfdcc337" />
+<img width="200" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/c0f083b1-f7ad-48f7-878c-5328b9b81f21" />
+<img width="200" alt="화면 캡처 2025-06-02 213821" src="https://github.com/user-attachments/assets/fd2acc54-eaf4-49d0-b5af-37d131aba0ee" />
 
 
 ## 실행 방법
